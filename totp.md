@@ -71,10 +71,18 @@ For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/i
 
 This step is only required **once**
 
-Log into any Pleiades Login node (whep users: please use higgs or top for that) and type `google-authenticator`.
+Log into any Pleiades Login node (whep users: please use higgs or top).
+**Check your quota** with `beegfs-ctl --getquota --gid $(id -g)` (whep users: use `quota $(id -u)`) and make sure you are not at the limit.
 
-The program will ask you a couple of questions, the answers are in **bold** and remarks in *italics*:
+Use the `google-authenticator` program to create a secret and QR code by answering a couple of questions.
 
+> **Shortcut** Instead of answering the questions manually, you can execute the command in a short form:
+<pre>
+[harenber@fugg2 ~]$ <b>google-authenticator -u -t  -D -f -W</b>
+</pre>
+
+The manual process is shown below.
+Answers are **bold** and remarks in *italics*:
 <pre>
 [harenber@fugg2 ~]$ <b>google-authenticator</b>
 
@@ -113,11 +121,6 @@ If the computer that you are logging into isn't hardened against brute-force
 login attempts, you can enable rate-limiting for the authentication module.
 By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting? (y/n) <b>n</b>
-</pre>
-
-> **Shortcut** If you're sick of answering each question one by one, here is the shortcut passing the right options to the command above: 
-<pre>
-[harenber@fugg2 ~]$ <b>google-authenticator -u -t  -D -f -W</b>
 </pre>
 
 > **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
