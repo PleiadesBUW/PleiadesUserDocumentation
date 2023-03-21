@@ -9,7 +9,7 @@ There are multiple login nodes available to submit jobs to the worker nodes: **h
 Jobs can run in one out of three partitions, namely:
 - **normal** (default), with a time limit of 3 days
 - **short**, intended for development and tests, with a time limit of 1 hour
-- long, with a default time limit of 7 days. Only 30 nodes at a time are allowed to execute in this partition, since this is intended for exceptional cases where jobs cannot be shortened below 3 days or composited with job dependencies where a subsequent job continues the operation.
+- **long**, with a default time limit of 7 days. Only 30 nodes at a time are allowed to execute in this partition, since this is intended for exceptional cases where jobs cannot be shortened below 3 days or composited with job dependencies where a subsequent job continues the operation.
 - **gpu**, with a time limit of 3 days. See [Using GPUs](gpu) for more information on how to submit jobs with GPU resources
 
 Think of partitions as a set of worker nodes, which are available to execute your jobs.
