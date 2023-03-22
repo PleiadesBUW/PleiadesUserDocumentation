@@ -16,7 +16,7 @@ In case of questions and problems, please use the following email address:
 
 ### First Login and password change
 You will receive your initial password from the administrators after your group leader has countersigned the user application.
-Please change your initial password on any Pleiades login machine by using the
+Please change your initial password on any PLEIADES login machine by using the
 
 ```bash
 $ passwd
@@ -49,7 +49,7 @@ fugg1.pleiades.uni-wuppertal.de
 fugg2.pleiades.uni-wuppertal.de
 ```
 
-This node can be used to develop and test code. Once this is finished jobs can be submitted to the pleiades cluster. This machine runs CentOS 7. You can login on it using your username, which will be provided by us.
+This node can be used to develop and test code. Once this is finished jobs can be submitted to the PLEIADES cluster. This machine runs CentOS 7. You can login on it using your username, which will be provided by us.
 Due to massive attacks from all over the world, SSH access is limited to IPs from inside the university's network (`132.195.0.0/16`). In addition, a protection system is used that blocks IP numbers which have been used with several unsuccessful logins. So if you mistype your credentials too often, you will be locked out for a while.
 
 A good practice for using ssh regularly is to setup ssh-keys on your local machine and use

@@ -46,9 +46,9 @@
       url: /software/avail
     - title: Using Software Modules
       url: /software/modules
-    - title: MPI on Pleiades
+    - title: MPI on PLEIADES
       url: /software/mpi
-    - title: Jupyter on Pleiades
+    - title: Jupyter on PLEIADES
       url: /software/jupyter-nb_on_pleiades
     - title: Containers
       url: /software/containers
@@ -56,7 +56,7 @@
       url: /software/pgi
 - title: wLCG Grid Certificates
   url: /GridCertificates
-- title: Pleiades Acknowledgement
+- title: PLEIADES Acknowledgement
   url: /PleiadesAcknowledgement
 - title: FAQ
   url: /faq

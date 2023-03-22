@@ -1,8 +1,8 @@
 ---
-title: "Software: MPI on Pleiades"
+title: "Software: MPI on PLEIADES"
 ---
 
-## Software: MPI on Pleiades
+## Software: MPI on PLEIADES
 There are multiple MPI environments available:
 1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1`
 1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or through Parallel Studio with `source /beegfs/Tools/intel/setup.sh` (Version from 2020)
@@ -10,7 +10,7 @@ There are multiple MPI environments available:
 1. Compiling your own MPI libraries
 1. LCG release (See last section of [modules]({{ site.baseurl }}{% link software/modules.md %}), **not using InfiniBand**)
 
-All MPI versions were tested on Pleiades with an MPI benchmark.
+All MPI versions were tested on PLEIADES with an MPI benchmark.
 These tests covered the mpirun and srun approach (see below), as well as ethernet and infiniband communication.
 
 Many problems with MPI are caused by a mismatch between the applications expected MPI version/configuration and the used MPI version in your environment.

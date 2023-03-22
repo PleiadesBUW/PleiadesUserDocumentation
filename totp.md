@@ -1,8 +1,8 @@
-# 2 Factor Authentication on Pleiades
+# 2 Factor Authentication on PLEIADES
 
 ## Why?
 
-To increase security significantly, [two-factor authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) requires a 2nd piece of evidence to log into the Pleiades cluster. 
+To increase security significantly, [two-factor authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) requires a 2nd piece of evidence to log into the PLEIADES cluster.
 
 We currently offer [TOTP](https://en.wikipedia.org/wiki/Time-based_one-time_password) (Time-based one-time password) logins, which usually require no additional hardware on the user's side - any smartphone is enough. Some people call that "Google Authenticator" because Google implented one reference of this method. But the [standard](https://datatracker.ietf.org/doc/html/rfc6238) is completely open.
 
@@ -67,11 +67,11 @@ Once installed, you need to configure FreeOTP+ to protect your TOTPs. Most moder
 
 For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/id1217793794) is probably your best choice.
 
-### Step 2: configure TOTP on Pleiades
+### Step 2: configure TOTP on PLEIADES
 
 This step is only required **once**
 
-Log into any Pleiades Login node (whep users: please use higgs or top).
+Log into any PLEIADES login node (whep users: please use higgs or top).
 **Check your quota** with `beegfs-ctl --getquota --gid $(id -g)` (whep users: use `quota $(id -u)`) and make sure you are not at the limit.
 
 Use the `google-authenticator` program to create a secret and QR code by answering a couple of questions.
@@ -133,9 +133,9 @@ If that does not work, you may add the secret key by hand:
 
 [<img src="assets/img/freeotp_add_secret.png" alt="FreeOTP screenshot" width="300">](assets/img/freeotp_add_secret.png)
 
-### Step 4: enter the verfication code now every time you login
+### Step 4: enter the verification code now every time you login
 
-When you login to any Pleiades login node, you will be asked now two questions:
+When you login to any PLEIADES login node, you will be asked now two questions:
 
 `(account@loginnode.pleiades.uni-wuppertal.de) Password:` **Here you enter your usual password**\
 `(account@loginnode.pleiades.uni-wuppertal.de) Verification code:` **Here you enter the time limited code provided by your smart phone app**

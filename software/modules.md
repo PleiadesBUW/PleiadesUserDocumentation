@@ -211,7 +211,7 @@ The SFT project at CERN provides multiple LCG releases that bundle many useful s
 source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc8-opt/setup.sh
 ```
 
-CVMFS is available on all login and worker nodes of Pleiades.
+CVMFS is available on all login and worker nodes of PLEIADES.
 
 If you are only interested in a single tool, e.g. gcc, you can source the corresponding setup.sh, e.g. in
 
