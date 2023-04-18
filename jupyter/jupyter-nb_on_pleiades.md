@@ -1,9 +1,9 @@
 ---
-title: "Software: Jupyter Notebooks on PLEIADES"
+title: "Jupyter: Custom Jupyter Notebooks on PLEIADES"
 ---
 
-## Software: Jupyter Notebooks on PLEIADES
-Currently, PLEIADES does not provide Jupyter Notebook servers for easy access. However, it is still possible to run an interactive Jupyter Notebook on the worker nodes with a few workarounds. It is important to note that depending on the method chosen to access the notebook, it may expose your work and potentially give access to your files to other users. Therefore, please stick to the provided approach. It is also important to clean up after yourself and close any unneeded Jupyter sessions to prevent others from being unable to access necessary computing resources.
+## Jupyter: Custom Jupyter Notebooks on PLEIADES
+PLEIADES does provide easy access to JupyterLab through its JupyterHub VM login. However, this ease of use comes with limited resources available for selection. If more resources are required, it is still possible to run a custom interactive Jupyter Notebook on the worker nodes with a few workarounds. It is important to note that depending on the method chosen to access the notebook, it may expose your work and potentially give access to your files to other users. Therefore, please stick to the provided approach. It is also important to clean up after yourself and close any unneeded Jupyter sessions to prevent others from being unable to access necessary computing resources.
 
 ### Safely Accessing Jupyter Notebooks on PLEIADES
 The safest way to initiate an interactive Jupyter Notebooks session is by using sockets for tunneling the notebook data.  This process consists of the following three steps:
