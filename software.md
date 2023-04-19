@@ -12,6 +12,5 @@ More information is available:
 - [Using software modules](software/modules)
 - [MPI on PLEIADES](software/mpi)
 - [Using Containers](software/containers)
-- [Jupyter on PLEIADES](software/jupyter-nb_on_pleiades)
 - [PGI Software](software/pgi)
 
