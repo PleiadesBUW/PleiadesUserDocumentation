@@ -8,10 +8,13 @@ PLEIADES provides users with easy access to a JupyterLab graphical user interfac
 
 ### JupyterHub: Available resources
 
-Users cannot adjust computational resources individually. Instead, the Scientific Computing Center PLEIADES provides multiple profiles with different resources that users can choose from. These profiles have been designed to make it easy for users to interact with their code for the purpose of performance analysis and quick evaluation. If users require a more customized resource setup, we also [provide a guide]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}) to interactive Jupyter-notebook sessions with individually set resource requirements.
+Users cannot adjust computational resources individually. Instead, the Scientific Computing Center PLEIADES provides multiple profiles with different resources that users can choose from. These profiles have been designed to make it easy for users to interact with their code for the purpose of performance analysis and quick evaluation. If users require a more customized resource setup, we also [provide a guide]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}) to interactive Jupyter-notebook sessions with individually set resource requirements.  
+  
+If you are using Python packages in your simulations, you need to make sure, that they are also available in your JuyterLab server sessions. If you were using your own Python installation, which is not *Python 3.9.5*, you will need to install the packages again with *Python 3.9.5*. The easiest way to do so is to start a JupyterLab server through JupyterHub and to open a bash terminal inside (*File->&gt;New-&gt;Terminal*). This ensures that the right `pip` installation will be used for `python pip install --user <PACKAGE>`.
 
 
-### JupyterHub: Access and Usage
+
+### JupyterHub: Access and usage
 
 To access the JupyterHub VM, users can [follow this link](https://jupyterhub.pleiades.uni-wuppertal.de/).
   
@@ -44,12 +47,14 @@ Once the connection to the JupyterLab server is established, the JupyterLab UI w
   
 A comprehensive guide on how to use JupyterLab and its various features can be found [in the official documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html).
   
-It is crucial to properly terminate your JupyterLab session as closing your browser window or logging out will not close the JupyterLab server. To end your session correctly, first, navigate to the Hub Control Panel by clicking on *File->Hub Control Panel* located in the top left corner of the interface. This will open the Hub Control Panel in a new window as shown below:
+It is crucial to properly terminate your JupyterLab session as closing your browser window or logging out will not close the JupyterLab server. To end your session correctly, first, navigate to the Hub Control Panel by clicking on *File-&gt;Hub Control Panel* located in the top left corner of the interface. This will open the Hub Control Panel in a new window as shown below:
   
 [![Hub Control Panel](../assets/img/jupyterhub/jh_hubControl.png)](assets/img/jupyterhub/jh_hubControl.png "Hub Control Panel")
   
 Clicking on *My Server* or on the logo of the BUW will bring you back to your running JupyterLab server, whereas clicking on *Stop my Server* will terminate the job. Depending on the cluster load, this might take some time, however, after clicking on *Stop my Server* you are free to close all windows.  
 If you are unable to terminate your server for any reason, you can always cancel the job manually by entering `scancel <JOBID>` in the terminal on the cluster, just like any other job on SLURM.
+
+### 
   
 ### JupyterHub: FAQ
 * **What versions are you using?**  
@@ -60,6 +65,8 @@ All JuypterLab server jobs get the same name, *spawner-jupyterhub*, although onl
 The logfiles belonging to the JupyterLab job (not just for JupyterLab itself) are always written to the users home directory and have the following naming convention: *jupyterhub_slurmspawner_&lt;JOBID&gt;.log*
 * **I would love to have more resources available for my JupyterLab session. Is this possible?**  
 Yes, you can manually configure and submit a JupyterLab server without using JupyterHub. Instructions on how to do this are provided [here]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}). 
+* **Why can't I find my Python packages?**  
+Please see the section [Available Resources](#jupyterhub:-available-resources) to ensure you have installed the packages into the right Python directory.
 
 
 
