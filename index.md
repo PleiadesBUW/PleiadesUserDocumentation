@@ -3,7 +3,7 @@ layout: default
 ---
 
 ### PLEIADES User Documentation
-Welcome to the user documentation of the scientific computing center PLEIADES, at the University of Wuppertal.
+Welcome to the user documentation of the Scientific Computing Center PLEIADES, at the University of Wuppertal.
 This page provides an introduction to our cluster, as well as best practices and answers to common questions.
 
 If you are a new user, please read our [getting started guide]({{ site.baseurl }}{% link gettingstarted.md %}), the [hardware description]({{ site.baseurl }}{% link hardware.md %}).
