@@ -6,6 +6,7 @@ title: "Getting Started: Monitoring"
 Our monitoring service can be accessed at [zabbix.pleiades.uni-wuppertal.de](https://zabbix.pleiades.uni-wuppertal.de/) with the credentials "pleiades" and "pleiades".
 Zabbix collects various information regarding current and past resource usage and quotas.
 
+
 ### Dashboard
 After login you are typically greeted by the user dashboard:
 [![Dashboard overview](../assets/img/zabbix/user_dashboard.jpg)](../assets/img/zabbix/user_dashboard.jpg)
@@ -51,3 +52,20 @@ These pages can help you answer questions like:
 * How much power does the GPU consume?
 
 If you know which GPUs your job is using, or if you use a whole node exclusively, this approach can help to assess your software performance.
+
+
+### Details of Specific Hosts
+It is possible to show detailed information for specific hosts.
+Start on the "Monitoring > Hosts" sub page:
+[![Host overview](../assets/img/zabbix/host_info_1.png)](../assets/img/zabbix/host_info_1.png)
+
+Here you can search certain hosts, e.g. a node which is currently involved in processing your Slurm job.
+You can use `squeue -u $USER` or `scontrol show job <jobid>` to get the list of nodes that are processing your job.
+
+Keep in mind that nodes are shared between jobs!
+If you need an exact performance assessment, use the `--exclusive` flag during job submission to disallow concurrent jobs at the cost of longer waiting times and billing the whole node(s).
+
+For each host, you can list all available data, show all predefined diagrams, or a show simple dashboard:
+[![Host options](../assets/img/zabbix/host_info_2.png)](../assets/img/zabbix/host_info_2.png)
+
+This approach can tell you how well your job utilizes available CPU, memory, InfiniBand, Ethernet, or GPU resources.
