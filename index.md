@@ -14,7 +14,7 @@ In case of further questions you can contact us at
 
 **pleiades{at}uni-wuppertal.de**
 
-More resources:
+### More Resources
   - [Official PLEIADES page](http://pleiades.uni-wuppertal.de/)
   - The [hpc-wiki.info](https://hpc-wiki.info/) contains many useful explanations about HPC topics, as well as [Tutorials](https://hpc-wiki.info/hpc/Category:Tutorials), covering
     - Linux introduction
