@@ -10,7 +10,7 @@ PLEIADES provides users with easy access to a JupyterLab graphical user interfac
 
 Users cannot adjust computational resources individually. Instead, the Scientific Computing Center PLEIADES provides multiple profiles with different resources that users can choose from. These profiles have been designed to make it easy for users to interact with their code for the purpose of performance analysis and quick evaluation. If users require a more customized resource setup, we also [provide a guide]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}) to interactive Jupyter-notebook sessions with individually set resource requirements.  
   
-If you are using Python packages in your simulations, you need to make sure, that they are also available in your JuyterLab server sessions. If you were using your own Python installation, which is not *Python 3.9.5*, you will need to install the packages again with *Python 3.9.5*. The easiest way to do so is to start a JupyterLab server through JupyterHub and to open a bash terminal inside (*File->&gt;New-&gt;Terminal*). This ensures that the right `pip` installation will be used for `python pip install --user <PACKAGE>`.
+If you are using Python packages in your simulations, you need to make sure, that they are also available in your JuyterLab server sessions. If you were using your own Python installation, which is not *Python 3.9.5*, you will need to install the packages again with *Python 3.9.5*. The easiest way to do so is to start a JupyterLab server through JupyterHub and to open a bash terminal inside (*File-&gt;New-&gt;Terminal*). This ensures that the right `pip` installation will be used for `python pip install --user <PACKAGE>`.
 
 
 
@@ -54,7 +54,29 @@ It is crucial to properly terminate your JupyterLab session as closing your brow
 Clicking on *My Server* or on the logo of the BUW will bring you back to your running JupyterLab server, whereas clicking on *Stop my Server* will terminate the job. Depending on the cluster load, this might take some time, however, after clicking on *Stop my Server* you are free to close all windows.  
 If you are unable to terminate your server for any reason, you can always cancel the job manually by entering `scancel <JOBID>` in the terminal on the cluster, just like any other job on SLURM.
 
-### 
+### JupyterHub: Custom virtual environments with Conda
+
+JupyterHub comes with direct Conda support. To activate the basic Conda environment *(base)* do the following:
+
+1. Open a terminal in your JupyterLab server: *File-&gt;New-&gt;Terminal*
+2. In the terminal enter `conda activate`. Afterwards you should see a *(base)* before the prompt indicating that you are in the *base* environment.
+
+You can deactivate this environment, like any conda environment, by typing `conda deactivate`. To disable the automatic activation of the *base* environment enter `conda config --set auto_activate_base false`.
+
+
+Often users are not interested in using only the *base* environment in order to prevent conflicts between differrent packages. In order to configure your own environment with packages and use it within any of your JupyterLab servers, follow these steps:
+
+1. Create your conda environment: `conda create --name <name_of_virtual_env>`
+2. Activate it (from anywhere): `conda activate <name_of_virtual_env>`
+3. Install any packages you like
+4. Install the *ipykernel* in conda: `conda install ipykernel`
+
+As of now, these environments are still not ready to be used within your Jupyter notebooks, because they are missing the *ipykernel* package. To activate an environment for the Jupyter notebooks, proceed as follows:
+
+1. Load your environment if it is not loaded yet: `conda activate `
+2.
+3.
+
   
 ### JupyterHub: FAQ
 * **What versions are you using?**  
