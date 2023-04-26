@@ -68,14 +68,15 @@ Often users are not interested in using only the *base* environment in order to 
 
 1. Create your conda environment: `conda create --name <name_of_virtual_env>`
 2. Activate it (from anywhere): `conda activate <name_of_virtual_env>`
-3. Install any packages you like
-4. Install the *ipykernel* in conda: `conda install ipykernel`
+3. Install any packages you like **through conda**
+4. Install the *ipykernel* package in the chosen conda virtual environment: `conda install ipykernel`
+5. Enable the kernel: `python -m ipykernel install --user --name 'Name-of-my-venv' --display-name "Displayed name of my venv"` 
+6. Start a new Jupyter notebook: *File-&gt;New-&gt;Notebook*
+7. Select your kernel from the dropdown menu according to your option `--display-name` from point 5
 
-As of now, these environments are still not ready to be used within your Jupyter notebooks, because they are missing the *ipykernel* package. To activate an environment for the Jupyter notebooks, proceed as follows:
+The command from point 5 installs your kernel into your local directory at `~/.local/share/jupyter/kernels`. Jupyter automatically checks this directory and makes these kernels available to the user through the JupyterLab interface.  
+If you prefer, you can also install the kernels while directly logged in to PLEIADES instead of the JupyterHub log in. Also remember to give the full path to your (virtual environment) python binary when enabling the kernel (step 5) if you are outside of the Conda environment.
 
-1. Load your environment if it is not loaded yet: `conda activate `
-2.
-3.
 
   
 ### JupyterHub: FAQ
