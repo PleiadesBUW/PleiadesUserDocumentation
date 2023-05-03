@@ -56,7 +56,7 @@ If you are unable to terminate your server for any reason, you can always cancel
 
 ### JupyterHub: Virtual environments with pip for custom IPython kernels
 
-$`\textcolor{red}{\text{CURRENTLY ONLY KERNELS BASED ON PYHON 3.9.5 ARE SUPPORTED}}`$ 
+$\textcolor{red}{\text{CURRENTLY ONLY KERNELS BASED ON PYHON 3.9.5 ARE SUPPORTED}}$ 
 
 Virtual environments provide a way to create isolated and self-contained Python environments with their own set of packages and dependencies, making it easier to manage different projects without interference. In this section, we will explore the steps required to create a virtual environment using pip and install the necessary packages for running JupyterLab with IPython kernels. These kernels can then be selected from the JupyterLab interface and will provide the associated virtual environment from within your JupyterLab session.
 
@@ -78,7 +78,7 @@ The command from point 5 installs your kernel into your local directory at `~/.l
 
 ### JupyterHub: Virtual environments with Conda for custom IPython kernels
 
-$`\textcolor{red}{\text{CURRENTLY ONLY KERNELS BASED ON PYHON 3.9.5 ARE SUPPORTED}}`$
+$\textcolor{red}{\text{CURRENTLY ONLY KERNELS BASED ON PYHON 3.9.5 ARE SUPPORTED}}$
 
 If you prefer to manage your packages and virtual environments with Conda, you can do this, aswell. To activate the basic Conda environment *(base)* do the following:
 
