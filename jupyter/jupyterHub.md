@@ -67,12 +67,13 @@ Before you start, you need to make sure, that you have a Python version loaded i
 1. Generate the virtual environment: `python -m venv <name_of_virtual_env>`
 2. Activate the virtual environment: `source /pathToVirtualEnvironment/bin/activate`
 3. Install the *ipykernel* package into the virtual environment: `python -m pip install ipykernel`
-4. Install any other required packages through pip: `python -m pip install <package1> <package2> ... <packageN>` 
-5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers: `python -m ipykernel install --user --name 'NameOfKernelALPHANUMERICAL' --display-name "Name of kernel displayed in Jupyter"`
-6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `de´activate`
+4. Install any other required packages through *pip*: `python -m pip install <package1> <package2> ... <packageN>` 
+5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:   
+`python -m ipykernel install --user --name 'NameOfKernelALPHANUMERICAL' --display-name "Name of kernel displayed in Jupyter"`
+6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `deactivate`
 
-After the activation of a virtual environment in **step 2**, you should see the name of the environment next to your usual prompt of the CLI, e.g. `(name_of_virtual_env) -bash-4.2$`. Likewise, it should disappear after **step 6**. Once a kernel has been created in **step 5**, you should almost immediately have it available in any (even already running) JupyterLab server. More importantly, you can continue modifying your custom kernels simply by sourcing its virtual environment (**step 2**) and then repeating **step 4** as much as you need.  
-The command from point 5 installs your kernel into your local directory at `~/.local/share/jupyter/kernels`. Jupyter automatically checks this directory and makes these kernels available to the user through the JupyterLab interface.
+After the activation of a virtual environment in **step 2**, you should see the name of the environment next to your usual prompt of the CLI, e.g. `(name_of_virtual_env) -bash-4.2$`. Likewise, the name of the environment should disappear after **step 6**. Once a kernel has been created in **step 5**, you should almost immediately have it available in any (even already running) JupyterLab server. More importantly, you can continue modifying your custom kernel simply by sourcing its virtual environment (**step 2**) and then repeating **step 4** as much as you need to.  
+The command from **step 5** installs your kernel into your local directory at `~/.local/share/jupyter/kernels`. Jupyter automatically checks this directory and makes these kernels available to the user through the JupyterLab interface.
 
 
 
