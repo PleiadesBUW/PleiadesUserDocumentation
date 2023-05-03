@@ -63,7 +63,7 @@ you are ready for the next step.
 
 
 #### Step 2: Tunneling to the Worker Node
-Worker nodes cannot be accessed from outside. This means, you cannot directly tunnel through socket `jupyter_wn.socket` from your local machine. Instead, you have to use one of the login nodes (*fugg1* or *fugg2*) as a jump host:
+Worker nodes cannot be accessed from outside. This means, you cannot directly tunnel through socket `jupyter_wn.socket` from your local machine. Instead, you have to use one of the login nodes (*fugg1* or *fugg2*) as a jump host (inserting the worker node from **step 1**):
 
 ```
 ssh -L 8888:/beegfs/<username>/jupyter_wn.socket -J fugg1.pleiades.uni-wuppertal.de <username>@<worker-node>.pleiades.uni-wuppertal.de -N
