@@ -83,12 +83,17 @@ http://localhost:8888/?token=0ef77dda74cag9274nc550ae49c55cb1c25ded2a6a0
     
 Like in **step 2** before, you need to adjust the `8888` according to your desired local port. Keep in mind, that the message in the *.err*-file will always use port `8888`, so you might have to adjust it. The long string after `token=` is a security measure to prevent others from accessing your notebook.
 
+#### Using virtual environments for custom IPython kernels
+
+It is possible to define your own IPython kernels based on virtual environments created and managed through *Conda* or a combination of *pip* and *venv*. We describe this in detail in our section on the [JupyterHub log in](jupyter/jupyterHub.md).
 
 #### Closing remarks
 * Please do not let your notebooks run while not using them, as they occupy valuable resources.
 * Closing the notebook does not mean the job will be closed, too. So please do not forget to cancle your respective jobs with `scancel <job-ID>` when done.
 * If you accidentally close the forwarding from step 2, you can simply repeat step 2 to reestablish connection.
 * If you get an error, that a port is already being used you can simply change the port. Further, you can close any process using a port with `kill $(lsof -t -i:<port-number>)`. 
+
+
 
 
 
