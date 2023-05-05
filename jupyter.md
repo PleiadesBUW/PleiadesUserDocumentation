@@ -11,3 +11,4 @@ Alternatively, *Custom JupyterLab servers* describes how to batch JupyterLab ser
 More information is available:
 - [JupyterHub Login](jupyter/jupyterHub.md)
 - [Custom JupyterLab servers](jupyter/jupyter-nb_on_pleiades.md)
+- [Generating custom kernels with IPython](jupyter/jupyter-kernels.md)
