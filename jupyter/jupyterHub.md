@@ -10,7 +10,7 @@ PLEIADES provides users with easy access to a JupyterLab graphical user interfac
 
 Users cannot adjust computational resources individually. Instead, the Scientific Computing Center PLEIADES provides multiple profiles with different resources that users can choose from. These profiles have been designed to make it easy for users to interact with their code for the purpose of performance analysis and quick evaluation. If users require a more customized resource setup, we also [provide a guide]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}) to interactive Jupyter-notebook sessions with individually set resource requirements.  
   
-If you are using Python packages in your simulations, you need to make sure, that they are also available in your JuyterLab server sessions. If you were using your own Python installation, which is not *Python 3.9.5*, you will need to install the packages again with *Python 3.9.5*. The easiest way to do so is to start a JupyterLab server through JupyterHub and to open a bash terminal inside (*File-&gt;New-&gt;Terminal*). This ensures that the right `pip` installation will be used for `python pip install --user <PACKAGE>`.
+If you are using Python packages in your simulations, you need to make sure, that they are also available in your JuyterLab server sessions. If you were using your own Python installation, which is not *Python 3.10.4*, you will need to install the packages again with *Python 3.10.4*. The easiest way to do so is to start a JupyterLab server through JupyterHub and to open a bash terminal inside (*File-&gt;New-&gt;Terminal*). This ensures that the right `pip` installation will be used for `python pip install --user <PACKAGE>`.
 
 
 
@@ -60,7 +60,7 @@ It is possible to define your own IPython kernels based on virtual environments 
   
 ### JupyterHub: FAQ
 * **What versions are you using?**  
-We are using *JupyterHub 3.1.1* and *JupyterLab 3.2.8*.
+We are using *JupyterHub 3.1.1* and *JupyterLab 3.5.0*.
 * **I have mutliple jobs running on the cluster. How do I know which one is the JupyterLab server?**  
 All JuypterLab server jobs get the same name, *spawner-jupyterhub*, although only a few characters might be visible when entering `squeue -u <USERNAME>`.
 * **I want to check my JuypterLab logfiles. Where are they located?**  
