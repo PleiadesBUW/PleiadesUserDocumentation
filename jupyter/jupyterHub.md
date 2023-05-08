@@ -56,7 +56,7 @@ If you are unable to terminate your server for any reason, you can always cancel
 
 #### Using virtual environments for custom IPython kernels
 
-It is possible to define your own IPython kernels based on virtual environments created and managed through *Conda* or a combination of *pip* and *venv*. We describe this in detail in our section on the [custom IPython kernels](jupyter/jupyter-kernels.md).
+It is possible to define your own IPython kernels based on virtual environments created and managed through *Conda* or a combination of *pip* and *venv*. We describe this in detail in our section on the [custom IPython kernels](./jupyter-kernels.md).
   
 ### JupyterHub: FAQ
 * **What versions are you using?**  
