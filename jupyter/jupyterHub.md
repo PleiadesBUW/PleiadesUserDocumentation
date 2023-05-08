@@ -66,7 +66,7 @@ All JuypterLab server jobs get the same name, *spawner-jupyterhub*, although onl
 * **I want to check my JuypterLab logfiles. Where are they located?**  
 The logfiles belonging to the JupyterLab job (not just for JupyterLab itself) are always written to the users home directory and have the following naming convention: *jupyterhub_slurmspawner_&lt;JOBID&gt;.log*
 * **I would love to have more resources available for my JupyterLab session. Is this possible?**  
-Yes, you can manually configure and submit a JupyterLab server without using JupyterHub. Instructions on how to do this are provided [here]({{ site.baseurl }}{% link Jupyter/jupyter-nb_on_pleiades.md %}). 
+Yes, you can manually configure and submit a JupyterLab server without using JupyterHub. Instructions on how to do this are provided [here]({{ site.baseurl }}{% link jupyter/jupyter-nb_on_pleiades.md %}). 
 * **Why can't I find my Python packages?**  
 Please see the section [Available Resources](#jupyterhub:-available-resources) to ensure you have installed the packages into the right Python directory.
 
