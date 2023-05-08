@@ -48,12 +48,17 @@
       url: /software/modules
     - title: MPI on PLEIADES
       url: /software/mpi
-    - title: Jupyter on PLEIADES
-      url: /software/jupyter-nb_on_pleiades
     - title: Containers
       url: /software/containers
     - title: PGI
       url: /software/pgi
+- title: Jupyter
+  url: /jupyter
+  sublinks:
+    - title: JupyterHub Login
+      url: /jupyter/jupyterHub
+    - title: Custom JupyterLab servers
+      url: /jupyter/jupyter-nb_on_pleiades
 - title: wLCG Grid Certificates
   url: /GridCertificates
 - title: PLEIADES Acknowledgement

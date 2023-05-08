@@ -1,9 +1,9 @@
 ---
-title: "Software: Jupyter Notebooks on PLEIADES"
+title: "Jupyter: Custom Jupyter Notebooks on PLEIADES"
 ---
 
-## Software: Jupyter Notebooks on PLEIADES
-Currently, PLEIADES does not provide Jupyter Notebook servers for easy access. However, it is still possible to run an interactive Jupyter Notebook on the worker nodes with a few workarounds. It is important to note that depending on the method chosen to access the notebook, it may expose your work and potentially give access to your files to other users. Therefore, please stick to the provided approach. It is also important to clean up after yourself and close any unneeded Jupyter sessions to prevent others from being unable to access necessary computing resources.
+## Jupyter: Custom Jupyter Notebooks on PLEIADES
+PLEIADES does provide easy access to JupyterLab through its JupyterHub VM login. However, this ease of use comes with limited resources available for selection. If more resources are required, it is still possible to run a custom interactive Jupyter Notebook on the worker nodes with a few workarounds. It is important to note that depending on the method chosen to access the notebook, it may expose your work and potentially give access to your files to other users. Therefore, please stick to the provided approach. It is also important to clean up after yourself and close any unneeded Jupyter sessions to prevent others from being unable to access necessary computing resources.
 
 ### Safely Accessing Jupyter Notebooks on PLEIADES
 The safest way to initiate an interactive Jupyter Notebooks session is by using sockets for tunneling the notebook data.  This process consists of the following three steps:
@@ -42,7 +42,7 @@ Here is an example:
 # Some initial setup
 module purge
 # This module load instruction is where the Jupyter client comes from
-module load 2021a  GCCcore/10.3.0  JupyterLab/3.2.8
+2022a GCCcore/11.3.0 JupyterHub/3.1.1 JupyterLab/3.5.0
 # Here you can load any additional modules you might need, e.g. for your simulations or for running R notebooks
 # module load my other modules
 
@@ -63,7 +63,7 @@ you are ready for the next step.
 
 
 #### Step 2: Tunneling to the Worker Node
-Worker nodes cannot be accessed from outside. This means, you cannot directly tunnel through socket `jupyter_wn.socket` from your local machine. Instead, you have to use one of the login nodes (*fugg1* or *fugg2*) as a jump host:
+Worker nodes cannot be accessed from outside. This means, you cannot directly tunnel through socket `jupyter_wn.socket` from your local machine. Instead, you have to use one of the login nodes (*fugg1* or *fugg2*) as a jump host (inserting the worker node from **step 1**):
 
 ```
 ssh -L 8888:/beegfs/<username>/jupyter_wn.socket -J fugg1.pleiades.uni-wuppertal.de <username>@<worker-node>.pleiades.uni-wuppertal.de -N
@@ -83,12 +83,17 @@ http://localhost:8888/?token=0ef77dda74cag9274nc550ae49c55cb1c25ded2a6a0
     
 Like in **step 2** before, you need to adjust the `8888` according to your desired local port. Keep in mind, that the message in the *.err*-file will always use port `8888`, so you might have to adjust it. The long string after `token=` is a security measure to prevent others from accessing your notebook.
 
+#### Using virtual environments for custom IPython kernels
+
+It is possible to define your own IPython kernels based on virtual environments created and managed through *Conda* or a combination of *pip* and *venv*. We describe this in detail in our section on the [custom IPython kernels](jupyter/jupyter-kernels.md).
 
 #### Closing remarks
 * Please do not let your notebooks run while not using them, as they occupy valuable resources.
 * Closing the notebook does not mean the job will be closed, too. So please do not forget to cancle your respective jobs with `scancel <job-ID>` when done.
 * If you accidentally close the forwarding from step 2, you can simply repeat step 2 to reestablish connection.
 * If you get an error, that a port is already being used you can simply change the port. Further, you can close any process using a port with `kill $(lsof -t -i:<port-number>)`. 
+
+
 
 
 
