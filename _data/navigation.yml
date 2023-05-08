@@ -55,10 +55,12 @@
 - title: Jupyter
   url: /jupyter
   sublinks:
-    - title: JupyterHub Login
+    - title: JupyterHub login
       url: /jupyter/jupyterHub
-    - title: Custom JupyterLab servers
+    - title: Custom Jupyter Notebooks
       url: /jupyter/jupyter-nb_on_pleiades
+    - title: Creating custom kernels with IPython
+      url: /jupyter/jupyter-kernels.md
 - title: wLCG Grid Certificates
   url: /GridCertificates
 - title: PLEIADES Acknowledgement
