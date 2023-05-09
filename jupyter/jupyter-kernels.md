@@ -62,10 +62,10 @@ To generate an IPython kernel for an arbitrary Python version you can initially 
 6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `deactivate`
 
 Comments on some of these steps are provided further above in the [corresponding section](#jupyterhub:-virtual-environments-with-pip-for-custom-ipython-kernels-(with-python-3.10.4)).  
-Afterwards, follow these steps (comments on some steps further below):
+Afterwards, follow these steps (we will use an IPython kernel based on Python 3.9.5 as an example):
 
 1. Go to the location of your kernel (usually something like `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL`)
-2. Change the `kernel.json` from something like this:  
+2. Change the argument vector (`argv`) in `kernel.json` from something like this:  
 ```
 {
  "argv": [
@@ -97,8 +97,9 @@ to something like this:
  }
 }
 ```
+Note, that you only change the content of `argv` and nothing else in that file. The argument vector will now point to a file `initKernel.sh`, which will be executed at the start up of the kernel.
 3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
-```
+```bash
 #!/usr/bin/env bash
 # Get rid of any modules loaded by JupyterHub / JupyterLab
 module purge
