@@ -60,7 +60,7 @@
     - title: Custom Jupyter Notebooks
       url: /jupyter/jupyter-nb_on_pleiades
     - title: Creating custom kernels with IPython
-      url: /jupyter/jupyter-kernels.md
+      url: /jupyter/jupyter-kernels
 - title: wLCG Grid Certificates
   url: /GridCertificates
 - title: PLEIADES Acknowledgement
