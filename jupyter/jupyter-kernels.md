@@ -50,6 +50,69 @@ If you prefer, you can also install the kernels while directly logged in to PLEI
 
 ### JupyterHub: Virtual environments with pip for custom IPython kernels (other Python versions)
 
+Utilizing kernels with a Python version other than 3.10.4 will result in the kernel not properly loading displayed in the JupyterLab interface as *disconnected*. This originates in the modules loaded for JupyterLab server start-up, which cause conflicts with other python libraries.  
+To generate an IPython kernel for an arbitrary Python version you can initially proceed as you would for a custom IPython kernel with Python 3.10.4:
 
+1. Generate the virtual environment: `python -m venv <name_of_virtual_env>`
+2. Activate the virtual environment: `source /pathToVirtualEnvironment/bin/activate`
+3. Install the *ipykernel* package into the virtual environment: `python -m pip install ipykernel`
+4. Install any other required packages through *pip*: `python -m pip install <package1> <package2> ... <packageN>` 
+5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:   
+`python -m ipykernel install --user --name 'NameOfKernelALPHANUMERICAL' --display-name "Name of kernel displayed in Jupyter"`
+6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `deactivate`
 
+Comments on some of these steps are provided further above in the [corresponding section](#jupyterhub:-virtual-environments-with-pip-for-custom-ipython-kernels-(with-python-3.10.4)).  
+Afterwards, follow these steps (comments on some steps further below):
 
+1. Go to the location of your kernel (usually something like `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL`)
+2. Change the `kernel.json` from something like this:  
+```
+{
+ "argv": [
+  "/pathToVirtualEnvironment/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Name of kernel displayed in Jupyter",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
+```
+to something like this:  
+```
+{
+ "argv": [
+  "~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/initKernel.sh",
+  "-f",
+  "{connection_file}"
+ ], 
+"display_name": "Name of kernel displayed in Jupyter",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
+```
+3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
+```
+#!/usr/bin/env bash
+
+# Get rid of any modules loaded by JupyterHub / JupyterLab
+module purge
+
+# Load the same modules which you have loaded
+# for the creation of the virtual environment.
+# If you are using your own insallation of Python
+# without any modules then you have to leave 
+# the next line empty.
+module load 2022a  GCCcore/11.3.0 Python/3.9.5-bare
+
+# This is CRITICAL and should ALWAYS be at the end of your script
+exec /pathToVirtualEnvironment/bin/python -m ipykernel $@
+```
+
+Keep in mind that the additional loading of modules in `initKernel.sh` might take some time. Keep an eye out on the kernel status, and once it states *idle*, you can start working.
