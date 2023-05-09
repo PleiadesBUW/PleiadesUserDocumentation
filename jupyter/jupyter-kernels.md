@@ -99,7 +99,6 @@ to something like this:
 ```
 3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
 ```
-  
 #!/usr/bin/env bash
   
 # Get rid of any modules loaded by JupyterHub / JupyterLab
