@@ -100,17 +100,14 @@ to something like this:
 3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
 ```
 #!/usr/bin/env bash
-  
 # Get rid of any modules loaded by JupyterHub / JupyterLab
 module purge
-  
 # Load the same modules which you have loaded
 # for the creation of the virtual environment.
 # If you are using your own insallation of Python
 # without any modules then you have to leave 
 # the next line empty.
 module load 2022a  GCCcore/11.3.0 Python/3.9.5-bare
-  
 # This is CRITICAL and should ALWAYS be at the end of your script
 exec /pathToVirtualEnvironment/bin/python -m ipykernel $@
 ```  
