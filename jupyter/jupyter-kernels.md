@@ -99,6 +99,7 @@ to something like this:
 ```
 3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
 ```
+  
 #!/usr/bin/env bash
   
 # Get rid of any modules loaded by JupyterHub / JupyterLab
@@ -113,6 +114,6 @@ module load 2022a  GCCcore/11.3.0 Python/3.9.5-bare
   
 # This is CRITICAL and should ALWAYS be at the end of your script
 exec /pathToVirtualEnvironment/bin/python -m ipykernel $@
-```
-
+```  
+  
 Keep in mind that the additional loading of modules in `initKernel.sh` might take some time. Keep an eye out on the kernel status, and once it states *idle*, you can start working.
