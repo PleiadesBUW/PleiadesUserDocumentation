@@ -61,6 +61,8 @@
       url: /jupyter/jupyter-nb_on_pleiades
     - title: Creating custom kernels with IPython
       url: /jupyter/jupyter-kernels
+    - title: Creating kernels for Julia and R
+      url: /jupyter/jupyter-kernels-JuliaR
 - title: wLCG Grid Certificates
   url: /GridCertificates
 - title: PLEIADES Acknowledgement

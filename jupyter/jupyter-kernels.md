@@ -10,15 +10,19 @@ As long as you want to have a virtual environment, which uses Python 3.10.4 (the
   
 We first begin with instructions regarding IPython kernels based on Python 3.10.4. **With the modular structure of PLEIADES' software stack it is not trivial to utilize new IPython kernels for other Python versions than 3.10.4.** Nevertheless, at the end of this section we provide instructions on how to generate IPython kernels for arbitray Python versions (supported by IPython) through *pip* and *venv* only. They require some additional modifications in the *kernel.json* file and correct Python paths. We do not provide support for such custom kernels and therefore user caution is advised. 
 
-### JupyterHub: Virtual environments with pip for custom IPython kernels (with Python 3.10.4)
+### Jupyter: Virtual environments with pip for custom IPython kernels (with Python 3.10.4)
 
-Before you start, you need to make sure, that you have Python version 3.10.4 loaded inside your current environment. If you do not have a Python 3.10.4 of your own, you can simply load it through one of the `module`s provided by the Scientific Computing Center PLEIADES. You can make sure you are using the desired Python binaries through `which python` and the version through `python --version`. Once ready, do the following to customize your virtual environment:
+Before you start, you need to make sure, that you have Python version 3.10.4 loaded inside your current environment. If you do not have a Python 3.10.4 of your own, you can simply load it through one of the `module`s provided by the Scientific Computing Center PLEIADES. You can make sure you are using the desired Python binries through `which python` and the version through `python --version`. Once ready, do the following to customize your virtual environment:
 
-1. Generate the virtual environment: `python -m venv <name_of_virtual_env>`
-2. Activate the virtual environment: `source /pathToVirtualEnvironment/bin/activate`
-3. Install the *ipykernel* package into the virtual environment: `python -m pip install ipykernel`
-4. Install any other required packages through *pip*: `python -m pip install <package1> <package2> ... <packageN>` 
-5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:   
+1. Generate the virtual environment:  
+`python -m venv <name_of_virtual_env>`
+2. Activate the virtual environment:  
+`source /pathToVirtualEnvironment/bin/activate`
+3. Install the *ipykernel* package into the virtual environment:  
+`python -m pip install ipykernel`
+4. Install any other required packages through *pip*:  
+`python -m pip install <package1> <package2> ... <packageN>` 
+5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:  
 `python -m ipykernel install --user --name 'NameOfKernelALPHANUMERICAL' --display-name "Name of kernel displayed in Jupyter"`
 6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `deactivate`
 
@@ -27,7 +31,7 @@ The command from **step 5** installs your kernel into your local directory at `~
 
 
 
-### JupyterHub: Virtual environments with Conda for custom IPython kernels (with Python 3.10.4)
+### Jupyter: Virtual environments with Conda for custom IPython kernels (with Python 3.10.4)
 
 If you prefer to manage your packages and virtual environments with Conda, you can do this, aswell. To activate the basic Conda environment *(base)* do the following:
 
@@ -38,30 +42,37 @@ You can deactivate this environment, like any conda environment, by typing `cond
 
 Often users are not interested in using only the *base* environment in order to prevent conflicts between differrent packages. In order to configure your own environment with packages and use it within any of your JupyterLab servers, follow these steps:
 
-1. Create your conda environment: `conda create --name <name_of_virtual_env>`
-2. Activate it (from anywhere): `conda activate <name_of_virtual_env>`
+1. Create your conda environment:  
+`conda create --name <name_of_virtual_env>`
+2. Activate it (from anywhere):  
+`conda activate <name_of_virtual_env>`
 3. Install any packages you like **through conda**
-4. Install the *ipykernel* package in the chosen conda virtual environment: `conda install ipykernel`
-5. Enable the kernel: `python -m ipykernel install --user --name 'Name-of-my-venv' --display-name "Displayed name of my venv"` 
-6. Start a new Jupyter notebook: *File-&gt;New-&gt;Notebook*
-7. Select your kernel from the dropdown menu according to your option `--display-name` from point 5
+4. Install the *ipykernel* package in the chosen conda virtual environment:  
+`conda install ipykernel`
+5. Enable the kernel:  
+`python -m ipykernel install --user --name 'Name-of-my-venv' --display-name "Displayed name of my venv"` 
+6. Deactivate the conda environment.
   
 If you prefer, you can also install the kernels while directly logged in to PLEIADES instead of the JupyterHub log in.
 
-### JupyterHub: Virtual environments with pip for custom IPython kernels (other Python versions)
+### Jupyter: Virtual environments with pip for custom IPython kernels (other Python versions)
 
 Utilizing kernels with a Python version other than 3.10.4 will result in the kernel not properly loading displayed in the JupyterLab interface as *disconnected*. This originates in the modules loaded for JupyterLab server start-up, which cause conflicts with other python libraries.  
 To generate an IPython kernel for an arbitrary Python version you can initially proceed as you would for a custom IPython kernel with Python 3.10.4:
 
-1. Generate the virtual environment: `python -m venv <name_of_virtual_env>`
-2. Activate the virtual environment: `source /pathToVirtualEnvironment/bin/activate`
-3. Install the *ipykernel* package into the virtual environment: `python -m pip install ipykernel`
-4. Install any other required packages through *pip*: `python -m pip install <package1> <package2> ... <packageN>` 
-5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:   
+1. Generate the virtual environment:  
+`python -m venv <name_of_virtual_env>`
+2. Activate the virtual environment:  
+`source /pathToVirtualEnvironment/bin/activate`
+3. Install the *ipykernel* package into the virtual environment:  
+`python -m pip install ipykernel`
+4. Install any other required packages through *pip*:  
+`python -m pip install <package1> <package2> ... <packageN>` 
+5. Use the *ipykernel* package to install a new IPython kernel for JupyterLab servers:  
 `python -m ipykernel install --user --name 'NameOfKernelALPHANUMERICAL' --display-name "Name of kernel displayed in Jupyter"`
 6. To not further mess with your kernel you should deactivate the corresponding virtual environment: `deactivate`
 
-Comments on some of these steps are provided further above in the [corresponding section](#jupyterhub:-virtual-environments-with-pip-for-custom-ipython-kernels-(with-python-3.10.4)).  
+Comments on some of these steps are provided further above in the [corresponding section](#jupyter:-virtual-environments-with-pip-for-custom-ipython-kernels-(with-python-3.10.4)).  
 Afterwards, follow these steps (we will use an IPython kernel based on Python 3.9.5 as an example):
 
 1. Go to the location of your kernel (usually something like `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL`)
@@ -97,7 +108,7 @@ to something like this:
  }
 }
 ```
-Note, that you only change the content of `argv` and nothing else in that file. The argument vector will now point to a file `initKernel.sh`, which will be executed at the start up of the kernel.
+Note, that you only have to change the content of `argv` and nothing else in that file. The argument vector will now point to a file `initKernel.sh`, which will be executed at the start up of the kernel.
 3. Create the file `initKernel.sh` in `~/.local/share/jupyter/kernels/NameOfKernelALPHANUMERICAL/` based on the following content:  
 ```bash
 #!/usr/bin/env bash
@@ -113,4 +124,4 @@ module load 2022a  GCCcore/11.3.0 Python/3.9.5-bare
 exec /pathToVirtualEnvironment/bin/python -m ipykernel $@
 ```  
   
-Keep in mind that the additional loading of modules in `initKernel.sh` might take some time. Keep an eye out on the kernel status, and once it states *idle*, you can start working.
+Keep in mind that the additional loading of modules in `initKernel.sh` might take some time. Keep an eye out on the kernel's status in JupyterLab, and once it states *idle*, you can start working.
