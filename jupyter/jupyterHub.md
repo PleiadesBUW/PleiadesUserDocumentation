@@ -16,7 +16,7 @@ If you are using Python packages in your simulations, you need to make sure, tha
 
 ### JupyterHub: Access and usage
 
-To access the JupyterHub VM, users can [follow this link](https://jupyterhub.pleiades.uni-wuppertal.de/).
+To access JupyterHub, users can go to [https://jupyterhub.pleiades.uni-wuppertal.de/](https://jupyterhub.pleiades.uni-wuppertal.de/).
   
 Any important information about the cluster, such as planned maintenance, will be displayed here as well. Users will be asked to enter their credentials, which are the same as their PLEIADES account. Once users have signed in and assuming they have no JupyterLab server instance running, they will be directed to the profile spawn menu. Otherwise, they will be directed to their running JupyterLab server.
 
