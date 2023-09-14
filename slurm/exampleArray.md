@@ -1,5 +1,8 @@
 ---
-title: "Slurm example: Job arrays"
+title: "Job arrays"
+layout: default
+parent: Slurm
+nav_order: 3
 ---
 
 ## Slurm example: Job arrays

@@ -1,5 +1,8 @@
 ---
-title: "Jupyter: Custom Jupyter Notebooks on PLEIADES"
+title: "Custom Jupyter Notebooks on PLEIADES"
+layout: default
+parent: Jupyter
+nav_order: 2
 ---
 
 ## Jupyter: Custom Jupyter Notebooks on PLEIADES

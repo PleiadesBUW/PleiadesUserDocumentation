@@ -1,5 +1,8 @@
 ---
-title: "File Systems: Moving Data"
+title: "Moving Data"
+layout: default
+parent: File Systems
+nav_order: 2
 ---
 
 ## File Systems: Moving Data

@@ -1,5 +1,8 @@
 ---
-title: "Slurm: Best Practices"
+title: "Best Practices"
+layout: default
+parent: Slurm
+nav_order: 7
 ---
 
 ## Slurm: Best Practise

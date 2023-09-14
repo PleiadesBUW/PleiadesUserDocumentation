@@ -1,5 +1,8 @@
 ---
-title: "Getting Started: Access"
+title: "Access"
+layout: default
+parent: Getting Started
+nav_order: 1
 ---
 
 ## Getting Started: Access

@@ -1,5 +1,8 @@
 ---
-title: "Software: MPI on PLEIADES"
+title: "MPI on PLEIADES"
+layout: default
+parent: Software on PLEIADES
+nav_order: 3
 ---
 
 ## Software: MPI on PLEIADES

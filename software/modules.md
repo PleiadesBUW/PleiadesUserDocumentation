@@ -1,5 +1,8 @@
 ---
-title: "Software: Modules"
+title: "Modules"
+layout: default
+parent: Software on PLEIADES
+nav_order: 2
 ---
 
 ## Software: Modules

@@ -1,5 +1,8 @@
 ---
-title: "Getting Started: Computations"
+title: "Computations"
+layout: default
+parent: Getting Started
+nav_order: 3
 ---
 
 ## Getting Started: Computations

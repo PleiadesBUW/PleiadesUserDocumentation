@@ -1,5 +1,7 @@
 ---
 title: "Frequently Answered Questions"
+layout: default
+nav_order: 9
 ---
 
 In case of questions, please contact us at **pleiades@uni-wuppertal.de**

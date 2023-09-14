@@ -1,5 +1,7 @@
 ---
 title: "PLEIADES Acknowledgement"
+layout: default
+nav_order: 8
 ---
 
 ## PLEIADES Acknowledgement

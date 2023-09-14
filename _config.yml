@@ -1,5 +1,10 @@
-theme: jekyll-theme-minimal
-title: "PLEIADES"
-description: "User documentation for the PLEIADES cluster at the University of Wuppertal"
+title: PLEIADES User Documentation
+description: User documentation for the PLEIADES cluster at the University of Wuppertal
+theme: just-the-docs
 show_downloads: false
 markdown: kramdown
+url: https://pleiadesbuw.github.io/PleiadesUserDocumentation/
+color_scheme: pleiades
+
+aux_links:
+    Pleiades Webpage: https://pleiades.uni-wuppertal.de/

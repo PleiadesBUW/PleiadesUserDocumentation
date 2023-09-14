@@ -1,5 +1,7 @@
 ---
+title: PLEIADES User Documentation
 layout: default
+nav_exclude: true
 ---
 
 ### PLEIADES User Documentation

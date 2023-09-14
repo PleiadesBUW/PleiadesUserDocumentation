@@ -1,5 +1,8 @@
 ---
-title: "Slurm example: Job dependencies"
+title: "Job dependencies"
+layout: default
+parent: Slurm
+nav_order: 4
 ---
 
 

@@ -1,5 +1,8 @@
 ---
-title: "Jupyter: JupyterHub on PLEIADES"
+title: "JupyterHub on PLEIADES"
+layout: default
+parent: Jupyter
+nav_order: 1
 ---
 
 ## Jupyter: JupyterHub on PLEIADES

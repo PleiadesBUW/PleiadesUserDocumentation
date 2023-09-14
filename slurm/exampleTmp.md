@@ -1,5 +1,8 @@
 ---
 title: "Slurm example: Clean up tmp directory"
+layout: default
+parent: Slurm
+nav_order: 5
 ---
 
 

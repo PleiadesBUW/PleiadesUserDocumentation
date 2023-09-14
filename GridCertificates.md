@@ -1,3 +1,9 @@
+---
+title: "wLCG Grid Certificates"
+layout: default
+nav_order: 7
+---
+
 # wLCG Grid Certificates
 
 ## Background

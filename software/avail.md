@@ -1,5 +1,8 @@
 ---
-title: "Software: Available Software"
+title: "Available Software"
+layout: default
+parent: Software on PLEIADES
+nav_order: 1
 ---
 
 ## Software: Available Software

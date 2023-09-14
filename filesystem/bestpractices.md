@@ -1,5 +1,8 @@
 ---
-title: "File Systems: Best Practices"
+title: "Best Practices"
+layout: default
+parent: File Systems
+nav_order: 3
 ---
 
 ## File Systems: Best Practices

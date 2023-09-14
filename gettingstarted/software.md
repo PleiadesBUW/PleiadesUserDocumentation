@@ -1,5 +1,8 @@
 ---
-title: "Getting Started: Software & File Systems"
+title: "Software & File Systems"
+layout: default
+parent: Getting Started
+nav_order: 2
 ---
 
 ## Getting Started: Software & File Systems

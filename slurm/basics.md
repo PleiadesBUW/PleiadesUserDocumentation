@@ -1,5 +1,8 @@
 ---
-title: "Slurm: Basics"
+title: "Basics"
+layout: default
+parent: Slurm
+nav_order: 1
 ---
 
 ## Slurm: Basics

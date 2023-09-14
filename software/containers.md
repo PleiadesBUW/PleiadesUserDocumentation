@@ -1,5 +1,8 @@
 ---
-title: "Software: Containers"
+title: "Containers"
+layout: default
+parent: Software on PLEIADES
+nav_order: 4
 ---
 
 ## Software: Containers

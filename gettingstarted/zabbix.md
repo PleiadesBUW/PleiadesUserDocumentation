@@ -1,5 +1,8 @@
 ---
-title: "Getting Started: Monitoring"
+title: "Monitoring"
+layout: default
+parent: Getting Started
+nav_order: 4
 ---
 
 ## Getting Started: Monitoring

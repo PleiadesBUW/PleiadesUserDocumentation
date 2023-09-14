@@ -1,5 +1,8 @@
 ---
-title: "Slurm: Using GPUs"
+title: "Using GPUs"
+layout: default
+parent: Slurm
+nav_order: 2
 ---
 
 > **NOTE:**

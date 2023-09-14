@@ -1,10 +1,6 @@
 ---
 title: "File Systems"
+layout: default
+nav_order: 3
+has_children: true
 ---
-
-## File Systems
-
-- [BeeGFS](filesystem/BeeGFS)
-- [File transfers](filesystem/filetransfers)
-- [Best practices](filesystem/bestpractices)
-

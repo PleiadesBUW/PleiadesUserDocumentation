@@ -1,5 +1,8 @@
 ---
-title: "Software: PGI"
+title: "PGI"
+layout: default
+parent: Software on PLEIADES
+nav_order: 5
 ---
 
 **PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**

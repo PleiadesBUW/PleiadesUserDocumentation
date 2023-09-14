@@ -1,5 +1,8 @@
 ---
-title: "Slurm: Job Performance"
+title: "Job Performance"
+layout: default
+parent: Slurm
+nav_order: 6
 ---
 
 ## Slurm: Job Performance

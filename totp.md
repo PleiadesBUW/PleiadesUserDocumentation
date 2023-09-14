@@ -1,3 +1,9 @@
+---
+title: "2 Factor Authentication on PLEIADES"
+layout: default
+nav_exclude: true
+---
+
 # 2 Factor Authentication on PLEIADES
 
 ## Why?

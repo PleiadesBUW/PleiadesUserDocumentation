@@ -1,5 +1,8 @@
 ---
 title: "Creating custom kernels with IPython"
+layout: default
+parent: Jupyter
+nav_order: 3
 ---
 
 ## Jupyter: Creating custom kernels with IPython

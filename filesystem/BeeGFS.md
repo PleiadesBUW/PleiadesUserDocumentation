@@ -1,5 +1,8 @@
 ---
-title: "File Systems: BeeGFS"
+title: "BeeGFS"
+layout: default
+parent: File Systems
+nav_order: 1
 ---
 
 ## BeeGFS
