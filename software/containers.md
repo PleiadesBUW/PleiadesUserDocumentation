@@ -35,22 +35,22 @@ Compile your program in the way you need to and log out of the container in the 
 
 
 ### Apptainer and MPI
-Apptainer can be used to execute mpi-processes in a container.
+Apptainer can be used to execute MPI-processes in a container.
 This can be done by using
 
 ```bash
 mpirun apptainer exec <your-.sif-file> </path/to/program>
 ```
 
-Note the order of calling mpi and apptainer.
-Apptainer will connect the mpi runtime environment on the host system with the mpi processes in the container.
+Note the order of calling MPI and apptainer.
+Apptainer will connect the MPI runtime environment on the host system with the MPI processes in the container.
 
 Also see [https://apptainer.org/docs/user/main/mpi.html](https://apptainer.org/docs/user/main/mpi.html) for more on this topic.
 
 
 ### Apptainer and GPUs
 You can use GPUs from within a container.
-Most important is running a gpu-prepared container gith the `--nv` flag, e.g.:
+Most important is running a gpu-prepared container with the `--nv` flag, e.g.:
 
 ```bash
 apptainer run --nv tensorflow_latest-gpu.sif
