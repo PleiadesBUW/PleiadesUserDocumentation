@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 ## Containers
-*Apptainer* (recently *Singularity*) is the most common containerization technology on HPC systems.
+*Apptainer* (until recently *Singularity*) is the most common containerization technology on HPC systems.
 Containers are a popular way to control software environments on various different platforms/machines.
 
 With containers you can:

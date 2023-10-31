@@ -29,6 +29,5 @@ Please try to estimate a maximum execution time and set your job time limits acc
     * All issues are mitigated if your programs have some form of checkpointing to save intermediate states. In this case, use the normal partition as described above.
 
 
-### Coming from SGE
-Previously, we used SGE to submit batch jobs.  
-Since many concepts are similar between these kind of tools, you just have to look up the new tool names in many cases. This [rosetta stone](https://slurm.schedmd.com/rosetta.pdf), provided by SchedMD is a good starting point.  
+### Coming from a different scheduler
+Since many concepts are similar between different scheduler implementations, you just have to look up the new tool names in many cases. This [rosetta stone](https://slurm.schedmd.com/rosetta.pdf), provided by SchedMD is a good starting point.  

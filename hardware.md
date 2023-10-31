@@ -32,14 +32,14 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
   - 176GB memory, 2GB per thread
 
 
-### Network
+### Network Overview
 The CPU Worker nodes wn21[001-268] are connected to each other and to the BeeGFS servers via InfiniBand and ethernet.
 All GPU nodes (gpu21[001-005]) are in a separate InfiniBand network and access BeeGFS via ethernet.
 The login nodes are currently connected to all other nodes via ethernet.
 
 [![Hardware and network layout of PLEIADES](assets/img/pleiades_layout.jpg)](assets/img/pleiades_layout.jpg)
 
-#### Network Performance for Computing
+### Network Performance for Computing
 For network intensive computing tasks between multiple nodes (e.g. MPI), the InfiniBand (IB) network should be used in any case.
 Our InfiniBand network topology is a non-blocking fat tree, which allows for full bandwidth between all nodes:
 
@@ -48,7 +48,7 @@ Our InfiniBand network topology is a non-blocking fat tree, which allows for ful
 Up to 40 nodes are connected with 100 Gbit/s (HDR100) to each leaf switch.
 All leaf switches have 40 channels with 200 Gbit/s (HDR) to the spine switches.
 As a consequence, it is not necessary to keep multi-node jobs physically close, since the bandwidth can be maintained throughout the whole network.
-Your multi-node jobs likely perform well with any wn21xxx involved.
+Your multi-node jobs likely perform equally well with any wn21xxx combination involved.
 
 A MPI job using our ethernet network, on the other, could saturate parts of or the whole network.
 For ethernet, the topology is similar, but with only 10 Gbit/s to each node and much fewer leaf-spine connections.
