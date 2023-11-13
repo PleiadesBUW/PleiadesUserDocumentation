@@ -8,7 +8,7 @@ nav_order: 2
 ## Getting Started: Software & File Systems
 
 ### Available Software
-Our centrally provided software installations are offered through [modules]({{ site.baseurl }}{% link software/modules.md %}).
+Our centrally provided software installations are offered through [modules](software/modules).
 The `LMod` command `module` is used to make certain programs in a specific version available to your current shell.
 
 For example, to load a GCC 10.3.0:
