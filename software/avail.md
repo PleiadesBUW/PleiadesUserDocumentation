@@ -6,9 +6,9 @@ nav_order: 1
 ---
 
 ## Software: Available Software
-We offer many software installations through [modules]({{ site.baseurl }}{% link software/modules.md %}).
+We offer many software installations through [modules](../software/modules).
 Alternatively, you can source an LCG release, as described on the module page.
-Finally, you can use [Singularity]({{ site.baseurl }}{% link software/containers.md %}) to set up a specific software environment by running your job in a container.
+Finally, you can use [Singularity](../software/containers) to set up a specific software environment by running your job in a container.
 
 ### List of Special Software
   - CUDA
@@ -29,7 +29,7 @@ Finally, you can use [Singularity]({{ site.baseurl }}{% link software/containers
     - Contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
     - **Parallel studio is superseded by oneAPI modules** Example modules: `intel-compilers`, `impi`, `imkl`, `VTune`
     - If you want to set up the old version, go with `source /beegfs/Tools/intel/setup.sh`
-  - [PGI]({{ site.baseurl }}{% link software/pgi.md %})
+  - [PGI](../software/pgi)
     - Collection of special purpose compilers for heterogeneous environments (CPUs & GPUs)
-    - **PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
+    - **PGI is superseded by the [NVHPC module](../software/modules), but both approaches should work.**
   - COMSOL 6, limited to certain groups

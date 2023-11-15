@@ -78,7 +78,7 @@ $ cd /beegfs/<userfolder>
 ```
 
 More information about running MPI jobs on Slurm is available at:
-- [MPI on PLEIADES]({{ site.baseurl }}{% link software/mpi.md %})
+- [MPI on PLEIADES](../software/mpi)
 - [https://slurm.schedmd.com/mpi_guide.html#open_mpi](https://slurm.schedmd.com/mpi_guide.html#open_mpi)
 - [https://www.open-mpi.org/faq/?category=slurm](https://www.open-mpi.org/faq/?category=slurm)
 

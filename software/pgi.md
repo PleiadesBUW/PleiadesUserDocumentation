@@ -5,7 +5,7 @@ parent: Software on PLEIADES
 nav_order: 5
 ---
 
-**PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
+**PGI is superseded by the [NVHPC module](../software/modules), but both approaches should work.**
 
 ## Software: PGI
 PGI provides tools to develop programs in a heterogeneous environment (CPUs & GPUs):

@@ -11,7 +11,7 @@ There are multiple MPI environments available:
 1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or through Parallel Studio with `source /beegfs/Tools/intel/setup.sh` (Version from 2020)
 1. Local package OpenMPI3 in `/lib64/openmpi3` on our worker nodes
 1. Compiling your own MPI libraries
-1. LCG release (See last section of [modules]({{ site.baseurl }}{% link software/modules.md %}), **not using InfiniBand**)
+1. LCG release (See last section of [modules](../software/modules), **not using InfiniBand**)
 
 All MPI versions were tested on PLEIADES with an MPI benchmark.
 These tests covered the mpirun and srun approach (see below), as well as ethernet and infiniband communication.
