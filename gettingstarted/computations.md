@@ -8,7 +8,7 @@ nav_order: 3
 ## Getting Started: Computations
 
 ### Job Submission
-Job submission is done through the [Slurm]({{ site.baseurl }}{% link slurm.md %}) batch system.
+Job submission is done through the [Slurm](../slurm) batch system.
 
 Jobs are usually submitted via a job script and the `sbatch` command, for example:
 ```bash
@@ -45,4 +45,4 @@ srun: job 12040877 has been allocated resources
 $     # shell now on worker node.
 ```
 
-For more information, please refer to the more detailed [Slurm documentation]({{ site.baseurl }}{% link slurm.md %}).
+For more information, please refer to the more detailed [Slurm documentation](../slurm).

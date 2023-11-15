@@ -31,7 +31,7 @@ You find your home directory at:
 There is no backup for the /beegfs file system. However, this file system is running on raid systems.
 
 if you need real local space on the worker nodes, use „/tmp“, but please clean up inside your jobs scripts, otherwise you will overload the nodes.
-We provide an [example job script](../slurm/exampleTmp.md) that automatically cleans up your files in `/tmp` in any case.
+We provide an [example job script](../slurm/exampleTmp) that automatically cleans up your files in `/tmp` in any case.
 
 
 **Heads up! WHEP users**
