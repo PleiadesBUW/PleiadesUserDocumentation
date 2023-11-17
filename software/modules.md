@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 ## Software: Modules
-We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users.
+We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users (also see [hpc-wiki.info/hpc/Modules](https://hpc-wiki.info/hpc/Modules)).
 Please have a look at the [LMod user guide](https://lmod.readthedocs.io/en/latest/010_user.html).
 
 ### Finding Modules

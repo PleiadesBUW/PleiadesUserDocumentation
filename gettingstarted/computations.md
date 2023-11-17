@@ -8,7 +8,7 @@ nav_order: 3
 ## Getting Started: Computations
 
 ### Job Submission
-Job submission is done through the [Slurm](../slurm) batch system.
+Job submission is done through the [Slurm](../slurm) batch system (also see [hpc-wiki.info/hpc/SLURM](https://hpc-wiki.info/hpc/SLURM)).
 
 Jobs are usually submitted via a job script and the `sbatch` command, for example:
 ```bash

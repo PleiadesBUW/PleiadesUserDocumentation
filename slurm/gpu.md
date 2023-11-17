@@ -12,6 +12,9 @@ nav_order: 2
 > You can check your own group affiliation with `sshare -U`.
 
 
+There is a general GPU tutorial available at [hpc-wiki.info/hpc/GPU_Tutorial](https://hpc-wiki.info/hpc/GPU_Tutorial).
+
+
 ## Slurm: Using GPUs
 This guide is introducing our newly available GPU nodes.
 The configuration is still very fresh, so please contact us if there are problems or if you expect something to behave differently.

@@ -6,6 +6,7 @@ nav_order: 1
 ---
 
 ## Slurm: Basics
+(also see [hpc-wiki.info/hpc/SLURM](https://hpc-wiki.info/hpc/SLURM))
 
 ### Submitting jobs
 There are multiple login nodes available to submit jobs to the worker nodes: **higgs**, **top**, **fugg1** and **fugg2**.
