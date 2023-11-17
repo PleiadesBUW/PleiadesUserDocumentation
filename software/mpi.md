@@ -6,6 +6,8 @@ nav_order: 3
 ---
 
 ## Software: MPI on PLEIADES
+(Also see [hpc-wiki.info/hpc/MPI](https://hpc-wiki.info/hpc/MPI))
+
 There are multiple MPI environments available:
 1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1`
 1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or through Parallel Studio with `source /beegfs/Tools/intel/setup.sh` (Version from 2020)
