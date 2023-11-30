@@ -6,6 +6,43 @@ nav_order: 6
 ---
 
 ## Slurm: Job Performance
+
+### `seff` and sending mails
+All login nodes and the slurm controller provide the `seff` utility script.
+With `seff` gives a quick overview of a jobs performance, e.g.
+
+```
+user@login$ seff 23320079
+Job ID: 23320079
+Cluster: pleiades
+User/Group: ...user.../...group...
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:13
+CPU Efficiency: 19.12% of 00:01:08 core-walltime
+Job Wall-clock time: 00:01:08
+Memory Utilized: 3.86 MB
+Memory Efficiency: 0.00% of 16.00 
+```
+
+The metrics are:
+* **CPU Utilized**: How many seconds the CPU were busy
+* **CPU Efficiency**: Ratio of active CPU time to the maximum possible with requested number of cores
+* **Job Wall-clock time**: How long the job was running
+* **Memory Utilized**: Largest seen memory utilization
+* **Memory Efficiency**: How much of the requested memory was used at peak
+
+Slurm is able to send mail notifications about a job state with the the `--mail-user` and `--mail-type` options of `srun` and `sbatch`:
+```
+$ sbatch --mail-user=myaccount@uni-wuppertal.de --mail-type=BEGIN,END,FAIL jobscript.sh
+```
+Here, `BEGIN,END,FAIL` is a list of events where notifications are send, i.e. when the job starts, stops, or fails.
+For all available mail-types, refer to [slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html#OPT_mail-type).
+
+The `seff` script is automatically executed and sent together with the `END` notification, to inform about the job performance.
+
+
+### Reportseff
 The third party script [reportseff](https://github.com/troycomi/reportseff) has been installed on all login nodes.
 It can provide a quick overview of your jobs performance:
 
@@ -15,11 +52,11 @@ It can provide a quick overview of your jobs performance:
 * **CPUEff**: Ratio of active CPU time to the maximum possible with requested number of cores
 * **MemEff**: How much of the requested memory was used at peak
 
-### Parameters
+#### Parameters
 You can use `reportseff -u <username>` to show all jobs from the past week.
 If the output is weird, use `--no-color` to disable the color command line parameters.
 
-### Interpreting
+#### Interpretation
 A low TimeEff means, you can use a shorter time limit for your job, which is easier and faster to be scheduled by Slurm.
 A TImeEff 100% occurs, if your job hits the maximum time limit.
 
