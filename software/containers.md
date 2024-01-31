@@ -57,3 +57,52 @@ apptainer run --nv tensorflow_latest-gpu.sif
 ```
 
 For more information, please read in the apptainer documentation: [https://apptainer.org/docs/user/main/gpu.html](https://apptainer.org/docs/user/main/gpu.html).
+
+### CentOS 7 Environment with /cvmfs using Apptainer
+If you need the CentOS7 environment on the new `up` and `down` machines where AlmaLinux 9 runs, you can use Apptainer to create a container with CentOS 7 setup. To do so, first, download the CentOS 7 image from the Docker Hub by using the command:
+
+```bash
+apptainer pull docker://centos:7
+```
+This will create a Singularity Image Format (SIF) file named `centos_7.sif` in your directory.
+
+**Opening an Interactive Shell in the CentOS 7 Container:**
+ You can explore and execute commands within the CentOS 7 container by opening an interactive shell. Use the following command:
+```bash
+apptainer shell centos_7.sif
+```
+
+**Mounting /cvmfs Inside an Apptainer Container:** To access CernVM-FS (`/cvmfs`) from within the container, bind-mount the host `/cvmfs` directory inside the container. Open an interactive shell with the mounted `/cvmfs` by using the command:
+```bash
+apptainer shell --bind /cvmfs:/cvmfs centos_7.sif
+```
+
+**Running a Slurm Job with CentOS 7 and CVMFS:** To submit a Slurm job with CentOS 7 and CVMFS (e.g., `centos_cvmfs_job.sh`) , you can create a script with the necessary configurations. For example:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=centos_cvmfs_job
+#SBATCH --partition=normal
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=00:30:00
+
+apptainer exec --bind /cvmfs:/cvmfs /path/to/centos_7.sif /path/to/executable.sh
+```
+Before submitting the job to the Slurm scheduler, ensure the executable has executable permissions:
+
+```bash
+chmod +x /path/to/executable.sh
+```
+
+A simple `executable.sh` can be:
+```bash
+echo "Hello from within the CentOS 7 container!"
+echo "CVMFS contents in /cvmfs/:"
+ls -l /cvmfs/atlas.cern.ch
+```
+
+Now, you can submit the job:
+```bash
+sbatch centos_cvmfs_job.sh
+```
