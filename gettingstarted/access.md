@@ -31,7 +31,7 @@ Current Password:
 
 
 ### Interactive JupyterHub
-As an alternative to a terminal-based SSH login, we offer a [JupyterHub](../jupyter.md) instance that starts an interactive JupyterLab session from your browser.
+As an alternative to a terminal-based SSH login, we offer a [JupyterHub](../jupyter) instance that starts an interactive JupyterLab session from your browser.
 It automatically allocates a small set of resources that are meant for interactive usage.
 > **Note:** The JupyterHub is only available from within the university network. If you are outside and need access, use the ZIMs webvpn.
 
