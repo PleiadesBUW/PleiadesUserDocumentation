@@ -8,7 +8,8 @@ nav_order: 1
 ## Getting Started: Access
 ### Getting an account
 If you belong to one of the groups participating in PLEIADES, you can get an account by filling out [this form](https://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_022023.pdf).
-If your group was **not** involved in PLEIADES, please ask your group leader to contact the support before submitting an account request or consult our [HPC.NRW Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download).
+If your group was **not** involved in PLEIADES, you can still get access, but please contact the support before submitting an account request.
+In general, you can consult our [HPC.NRW Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download) which outlines the access conditions and procedures.
 
 
 ### Questions/Support
@@ -19,13 +20,20 @@ In case of questions and problems, please use the following email address:
 
 ### First Login and password change
 You will receive your initial password from the administrators after your group leader has countersigned the user application.
-Please change your initial password on any PLEIADES login machine by using the
+Please change your initial password on any PLEIADES login machine by using this command:
 
 ```bash
 $ passwd
+Changing password for user USERNAME.
+Current Password:
+[...]
 ```
 
-command.
+
+### Interactive JupyterHub
+As an alternative to a terminal-based SSH login, we offer a [JupyterHub](../jupyter.md) instance that starts an interactive JupyterLab session from your browser.
+It automatically allocates a small set of resources that are meant for interactive usage.
+> **Note:** The JupyterHub is only available from within the university network. If you are outside and need access, use the ZIMs webvpn.
 
 
 ### SSH Login
@@ -44,7 +52,7 @@ More info about ssh keys is available in the [corresponding github documentation
 > **Note:** This approach is also more secure, since mis-typing the URL for `uni-wuppertal.de` could expose your credentials to a malicious server that is not in our control.
 
 
-### Login (all users except "whep" users)
+### Login Nodes (all users except "whep" users)
 There are two login machine from which the cluster can be operated. They are:
 
 ```
@@ -72,7 +80,7 @@ ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
 (from your local machine) to enable a key-based login on the frontend.
 
 
-### Login (whep users)
+### Login Nodes (whep users)
 
 The login mechanism for whep users is the same as for all other users, except for the login nodes. There are 2 login nodes running CentOS 7 (recommended)
 
@@ -81,4 +89,10 @@ higgs.pleiades.uni-wuppertal.de
 top.pleiades.uni-wuppertal.de
 ```
 
-**Only whep users can log into higgs and top!!!**
+Since the beginning of 2024, there are also two new machines running Alma Linux 9:
+```bash
+up.pleiades.uni-wuppertal.de
+down.pleiades.uni-wuppertal.de
+```
+
+**Only whep users can log into higgs and top!**

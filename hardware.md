@@ -50,5 +50,5 @@ All leaf switches have 40 channels with 200 Gbit/s (HDR) to the spine switches.
 As a consequence, it is not necessary to keep multi-node jobs physically close, since the bandwidth can be maintained throughout the whole network.
 Your multi-node jobs likely perform equally well with any wn21xxx combination involved.
 
-A MPI job using our ethernet network, on the other, could saturate parts of or the whole network.
+On the other hand, an MPI job using the ethernet network could saturate parts of or the whole network, resulting in worse performance.
 For ethernet, the topology is similar, but with only 10 Gbit/s to each node and much fewer leaf-spine connections.

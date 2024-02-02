@@ -45,9 +45,9 @@ For more information, please consult our [Software documentation](../software).
 ### File Systems
 On our cluster, we have the following storage systems:
 
-* **Workernode local storage** in `/tmp`: 2TB of fast SSD storage per node. Great place for active work directories in jobs.
-* **BeeGFS** in `/beegfs`: >900TB shared storage accessible in all nodes. Home directory to all users and intended for storing results and organizing data. I/O intensive jobs should avoid on interacting directly with `/beegfs`.
+* **Workernode local storage** in `/tmp` (**no backup!**): 2TB of fast SSD storage per node. Great place for active work directories in jobs.
+* **BeeGFS** in `/beegfs` (**no backup!**): >900TB shared storage accessible in all nodes. Home directory to all users and intended for storing results and organizing data. I/O intensive jobs should avoid on interacting directly with `/beegfs`.
 * **CVMFS** in `/cvmfs`: Read-only storage to distribute special software.
-* **NFS** in `/common/home`: Home directory for users of the whep group
+* **NFS** in `/common/home` (regular backup): Home directory for users of the whep group
 
 For more information, please consult our [file system documentation](../filesystem).
