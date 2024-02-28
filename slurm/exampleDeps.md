@@ -67,4 +67,4 @@ done
 # The others will wait.
 ```
 
-This structure can be used to automatically continue computations after the maximum 3 days of our `normal` partition.
+This structure can be used to automatically continue computations after the maximum 4 days of our `normal` partition.
