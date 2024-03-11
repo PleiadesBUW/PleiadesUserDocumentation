@@ -59,7 +59,7 @@ apptainer run --nv tensorflow_latest-gpu.sif
 For more information, please read in the apptainer documentation: [https://apptainer.org/docs/user/main/gpu.html](https://apptainer.org/docs/user/main/gpu.html).
 
 ### CentOS 7 Environment with /cvmfs using Apptainer
-If you need the CentOS7 environment on the new `up` and `down` machines where AlmaLinux 9 runs, you can use Apptainer to create a container with CentOS 7 setup. To do so, first, download the CentOS 7 image from the Docker Hub by using the command:
+If you need a CentOS 7 environment on any machine that runs AlmaLinux 9, you can use Apptainer to create a container with CentOS 7 setup. To do so, first, download the CentOS 7 image from the Docker Hub by using the command:
 
 ```bash
 apptainer pull docker://centos:7
