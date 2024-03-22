@@ -8,12 +8,12 @@ In case of questions, please contact us at **pleiades@uni-wuppertal.de**
 
 > **Q:** Can I get access to the cluster?
 >
-> **A:** Yes, if you are part of one of the involved groups. There are also limited resources for any other member of the University of Wuppertal. You can also consult our [Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download) to study the access requirements. To request an account, fill out [this form](http://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_072022.pdf).
+> **A:** Yes, if you are part of one of the involved groups. There are also limited resources for any other member of the University of Wuppertal. You can also consult our [Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download) to study the access requirements. To request an account, fill out [this form](https://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_032024.pdf).
 
 
 > **Q:** How do I apply for an account?
 >
-> **A:** Fill out the [application form](https://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_022023.pdf) and send it to **pleiades@uni-wuppertal.de**.
+> **A:** Fill out the [application form](https://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_032024.pdf) and send it to **pleiades@uni-wuppertal.de**.
 
 
 > **Q:** How can I use software on the cluster?
