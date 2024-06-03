@@ -9,7 +9,7 @@ nav_order: 3
 >
 > Since the update to Alma Linux 9, we do not recommend using `srun` to manage MPI jobs anymore!
 > You can just use `mpirun` / `mpiexec` in your Slurm job scripts.
-> We are following the recommendations of [OpenMPI](https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html#using-slurm-s-direct-launch-functionality)
+> We are following the recommendations of [OpenMPI](https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html#using-slurm-s-direct-launch-functionality).
 > This likely applies to other MPI implementations as well.
 
 
