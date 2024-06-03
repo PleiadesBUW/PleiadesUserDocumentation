@@ -11,7 +11,10 @@ nav_order: 2
 Our centrally provided software installations are offered through [modules](../software/modules) (also see [hpc-wiki.info/hpc/Modules](https://hpc-wiki.info/hpc/Modules)).
 The `LMod` command `module` is used to make certain programs in a specific version available to your current shell.
 
-For example, to load a GCC 10.3.0:
+You can load modules from the [EESSI Projects](https://www.eessi.io/) through `/cvmfs/software.eessi.io`, or local centrally provided modules located in `/beegfs/tools`.
+We recommend trying the EESSI approach first, as described in our [Software documentation](../software/modules).
+
+As a general example, to load a GCC 10.3.0 from our local software stack you can run:
 ```bash
 $ module spider GCC/10.3.0
 --------------------------------------------
