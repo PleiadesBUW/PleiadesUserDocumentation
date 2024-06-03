@@ -7,8 +7,9 @@ nav_order: 1
 
 ## Software: Available Software
 We offer many software installations through [modules](../software/modules).
+You can load modules from the [EESSI Projects](https://www.eessi.io/) through `/cvmfs/software.eessi.io`, or local centrally provided modules located in `/beegfs/tools`.
 Alternatively, you can source an LCG release, as described on the module page.
-Finally, you can use [Singularity](../software/containers) to set up a specific software environment by running your job in a container.
+Finally, you can use [Apptainer containers](../software/containers) to set up a specific software environment by running your job in a container.
 
 ### List of Special Software
   - CUDA
@@ -32,4 +33,4 @@ Finally, you can use [Singularity](../software/containers) to set up a specific 
   - [PGI](../software/pgi)
     - Collection of special purpose compilers for heterogeneous environments (CPUs & GPUs)
     - **PGI is superseded by the [NVHPC module](../software/modules), but both approaches should work.**
-  - COMSOL 6, limited to certain groups
+  - COMSOL 6, limited to certain groups. If you are interested in using COMSOL, [join our rocket chat room (chat.uni-wuppertal.de)](https://go.rocket.chat/invite?host=chat.uni-wuppertal.de&path=invite%2FDbyQJk).

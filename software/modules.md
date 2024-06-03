@@ -5,9 +5,59 @@ parent: Software on PLEIADES
 nav_order: 2
 ---
 
+> **Note (2024-06-03):**
+>
+> We are now recommending loading software modules through the EESSI project whenever possible!
+> The software is read from CVMFS, which is more performant than our local BeeGFS file system.
+> If the software is not available their, you can still read it from BeeGFS as usual.
+
 ## Software: Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users (also see [hpc-wiki.info/hpc/Modules](https://hpc-wiki.info/hpc/Modules)).
 Please have a look at the [LMod user guide](https://lmod.readthedocs.io/en/latest/010_user.html).
+
+### Preparing the EESSI Environment
+The [EESSI project](https://www.eessi.io/) provides many modules through a community driven "streaming service" for scientific software.
+**We recommend trying this approach first**, since you can benefit from two optimizations:
+
+1. EESSI has optimized software builds for many hardware architectures (selected automatically)
+2. EESSI is distributing its software via CVMFS, which is very performant when reading software
+
+The very first access to a software package might take a short while to download in the background (seconds).
+Every subsequent access is served by local caches and therefore very fast.
+
+Feel free to contact us if you run into one of the following issues with EESSI:
+
+1. The software you want to use is not be available on EESSI, yet (we may be able to change that!)
+2. Software for GPUs (e.g. built on CUDA) might need more work before it is available (licensing reason)
+
+You can use EESSI on all of our cluster systems. You can verify this with a simple check:
+
+```bash
+less /cvmfs/software.eessi.io/README.eessi
+```
+
+If the file is available, you can load software modules through EESSI through a single command:
+
+```bash
+$ source /cvmfs/software.eessi.io/versions/2023.06/init/bash 
+Found EESSI repo @ /cvmfs/software.eessi.io/versions/2023.06!
+archdetect says x86_64/intel/haswell
+Using x86_64/intel/haswell as software subdirectory.
+Found Lmod configuration file at /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/haswell/.lmod/lmodrc.lua
+Using /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/haswell/modules/all as the directory to be added to MODULEPATH.
+Found Lmod configuration file at /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/haswell/.lmod/lmodrc.lua
+Found Lmod SitePackage.lua file at /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/haswell/.lmod/SitePackage.lua
+Initializing Lmod...
+Prepending /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/haswell/modules/all to $MODULEPATH...
+Environment set up to use EESSI (2023.06), have fun!
+
+{EESSI 2023.06} $ module avail # run the usual module commands
+```
+
+Be aware, that more recent versions of the whole software stack might be available in the `/cvmfs/software.eessi.io/versions` directory (here `2023.06`).
+
+You can find [more information about EESSI on hpc-wiki.info](https://hpc-wiki.info/hpc/Streaming_scientific_software_with_EESSI) and the [EESSI documentation](https://www.eessi.io/docs/).
+
 
 ### Finding Modules
 After login, you can use the `module` command to find and load software:

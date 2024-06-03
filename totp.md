@@ -77,7 +77,7 @@ For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/i
 
 This step is only required **once**
 
-Log into any PLEIADES login node (whep users: please use higgs or top).
+Log into any PLEIADES login node (whep users: please use higgs, top, up, or down).
 **Check your quota** with `beegfs-ctl --getquota --gid $(id -g)` (whep users: use `quota $(id -u)`) and make sure you are not at the limit.
 
 Use the `google-authenticator` program to create a secret and QR code by answering a couple of questions.
@@ -129,7 +129,7 @@ By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting? (y/n) <b>n</b>
 </pre>
 
-> **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
+> **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs/up/down and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs/up/down and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
 
 ### Step 3: inserting the secret key into your phone app
 

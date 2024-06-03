@@ -95,4 +95,4 @@ up.pleiades.uni-wuppertal.de
 down.pleiades.uni-wuppertal.de
 ```
 
-**Only whep users can log into higgs and top!**
+**Only whep users can log into higgs, top, up, and down!**
