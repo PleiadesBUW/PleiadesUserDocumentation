@@ -22,10 +22,13 @@ Finally, you can use [Apptainer containers](../software/containers) to set up a 
     - `module load 2021a ARMForge/21.1.1`
   - NAG Library through modules `NAG` and `NAGfor`
     - `module load 2021a intel-compilers/2021.2.0 NAG/27.3.0`
-    - `module load 2021a NAGfor/7.1.01`
     - `module load 2022a intel-compilers/2021.4.0 NAG/29.0.0`
+      - When using NAG, you have to source `${EBROOTNAG}/nll6i29dbl/scripts/nagvars.sh` with the correct arguments for your situation, e.g. "int64 vendor static"
+    - `module load 2021a NAGfor/7.1.01`
     - `module load 2022a NAGfor/7.1.14`
-    - When using NAG, you have to source `${EBROOTNAG}/nll6i29dbl/scripts/nagvars.sh` with the correct arguments for your situation, e.g. "int64 vendor static"
+    - `module load 2022a NAGfor/7.2.3`
+    - `module load 2022a intel-compilers/2021.4.0 NAG/30.0.0`
+      - When using NAG, you have to source `${EBROOTNAG}/nll6i30dbl/scripts/nagvars.sh` with the correct arguments for your situation, e.g. "int64 vendor static"
   - Intel parallel studio XE 2020
     - Contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
     - **Parallel studio is superseded by oneAPI modules** Example modules: `intel-compilers`, `impi`, `imkl`, `VTune`
