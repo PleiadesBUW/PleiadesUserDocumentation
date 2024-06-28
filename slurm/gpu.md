@@ -116,6 +116,8 @@ CUDA_VISIBLE_DEVICES=2,6
 
 The GPU IDs range from 0 to 7, and match the GPU IDs reported via the `nvidia-smi` tool or in our [monitoring system](../gettingstarted/zabbix).
 
+You may add `echo $CUDA_VISIBLE_DEVICES` to your Slurm job script in order to see which GPUs each job is using.
+
 
 ### Software
 Some basic packages are installed on all GPU nodes:
