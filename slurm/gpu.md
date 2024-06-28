@@ -105,6 +105,18 @@ srun -n8 nvidia-smi topo -m
 ```
 
 
+### Which GPUs is my Job Using?
+When you use only a couple of available GPUs on a system, you might wonder **which**.
+When submitting your jobs through Slurm, your job will have the `CUDA_VISIBLE_DEVICES` environment variable, which lists your GPU IDs, e.g.:
+
+```
+user@gpu21005:~$ env | grep CUDA_VISIBLE
+CUDA_VISIBLE_DEVICES=2,6
+```
+
+The GPU IDs range from 0 to 7, and match the GPU IDs reported via the `nvidia-smi` tool or in our [monitoring system](../gettingstarted/zabbix).
+
+
 ### Software
 Some basic packages are installed on all GPU nodes:
 ```
