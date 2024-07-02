@@ -153,3 +153,81 @@ Additionally, you can try some of the available [modules](../software/modules) w
 
 In all of these cases you would run `module load 2021a <module/version>` in your `sbatch` job script or your interactive `salloc`/`srun` allocation to gain access to the corresponding tools.
 The modules have not been tested in this context yet, so please get in touch if something does not work as expected.
+
+
+### Stop GPU Jobs with Low Utilization
+You may want to make sure that your GPU job is canceled, if it is not utilizing the GPUs well enough.
+With this approach you stop early in case of bugs or other issues, which improves the availability of GPU resources for everyone.
+
+Following the example of a dedicated PLEIADES user, you could create a shell script `monitor_gpu_usage.sh`:
+```bash
+#! /usr/bin/env bash
+
+# Specify the idle time threshold in seconds (e.g., 1800 seconds for 30 minutes)
+IDLE_THRESHOLD=${IDLE_THRESHOLD:-1800}  # Default to 30 minutes if not set
+
+# Function to check GPU usage
+check_gpu_usage() {
+  local gpu_usage
+  # Use CUDA_VISIBLE_DEVICES if set, otherwise fall back to GPU_DEVICE_ORDINAL
+  local gpu_list=${CUDA_VISIBLE_DEVICES:-$GPU_DEVICE_ORDINAL}
+  
+  if [ -z "$gpu_list" ]; then
+    echo "No GPUs allocated to this job"
+    return 1
+  fi
+
+  gpu_usage=$(nvidia-smi --id=$(echo $gpu_list | tr ',' ' ') --query-gpu=utilization.gpu --format=csv,noheader,nounits)
+  
+  # If all GPUs are below the threshold (e.g., 5%), return 1
+  for usage in $gpu_usage; do
+    if [ "$usage" -gt 5 ]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Record the start time
+start_time=$(date +%s)
+
+while true; do
+  sleep 60  # Check every 60 seconds
+  if check_gpu_usage; then
+    # If GPUs are not idle, update the start time
+    start_time=$(date +%s)
+  else
+    # Calculate the elapsed time since GPUs became idle
+    current_time=$(date +%s)
+    elapsed_time=$((current_time - start_time))
+    if [ "$elapsed_time" -ge "$IDLE_THRESHOLD" ]; then
+      # If the elapsed time exceeds the threshold, exit the job
+      echo "GPUs have been idle (below 5% utilization) for more than $((IDLE_THRESHOLD / 60)) minutes. Terminating job."
+      scancel $SLURM_JOB_ID
+      exit 0
+    fi
+  fi
+done
+```
+
+You have to tune the `$IDLE_THRESHOLD` to your workload though!
+Downloading or preparing large datasets and similar preparation tasks naturally have low GPU utilization.
+
+In your Slurm job, you could start the script in background and kill it after your main workload is done:
+```bash
+#! /usr/bin/env bash
+#SBATCH -p gpu
+#SBATCH ...
+
+# Do preparation tasks with low GPU utilization here
+# e.g. Download or prepare some dataset
+
+bash monitor_gpu_usage.sh &   # Start monitor script in background
+MONITOR_PID=$!                # Remember PID of monitor script
+
+# Put your work here
+some_command                  # main workload
+# Anything you wish to do
+
+kill $MONITOR_PID             # Kill monitoring if main workload is done
+```
