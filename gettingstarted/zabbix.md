@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 ## Getting Started: Monitoring
-Our monitoring service can be accessed at [zabbix.pleiades.uni-wuppertal.de](https://zabbix.pleiades.uni-wuppertal.de/) with the credentials "pleiades" and "pleiades".
+Our monitoring service can be accessed at [zabbix.pleiades.uni-wuppertal.de](https://zabbix.pleiades.uni-wuppertal.de/) with the credentials "pleiades" and "monitoring".
 Zabbix collects various information regarding current and past resource usage and quotas.
 
 > **Note:** Zabbix is only accessible from the university network! If you are outside and need access, use the ZIMs webvpn.
