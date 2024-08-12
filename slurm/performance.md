@@ -67,7 +67,7 @@ If the application itself is inefficient at scaling to larger numbers of cores, 
 
 A large MemEff means, your job is utilizing the requested memory.
 Everything below 100% is probably fine, as long as your job runs as expected.
-A very large percentage above 100% could mean that your application expects more than 4GB of memory per core.
+A very large percentage above 100% could mean that your application expects more than 3800MB of memory per core.
 In this case, submit your job with a specific `--mem` request or increase the number of cores without using them.
 If MemEff gets exceedingly large, your job might be canceled (out of memory), which can be caused by memory leaks etc.
 

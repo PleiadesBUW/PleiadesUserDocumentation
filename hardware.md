@@ -20,7 +20,7 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
 - **wn21[001-268]**: 
   - 2 sockets with AMD EPYC 7452 32-Core processor. 64 Cores in total
   - Hyperthreading disabled
-  - 256GB memory, 4GB per thread
+  - 256GB memory, 3800MB per thread (to leave some headroom for the OS)
 - **gpu21[001-005]**:
   - 8 GPUs: NVidia HGX A100
   - 2 sockets with AMD EPYC 7763 64-Core processor. 128 Cores in total
