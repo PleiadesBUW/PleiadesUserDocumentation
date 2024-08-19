@@ -18,10 +18,13 @@ The safest way to initiate an interactive Jupyter Notebooks session is by using 
 We will now explain these steps in more detail, along with the necessary inputs.
 
 #### Step 1: Submitting a Jupyter Notebook Job
-To initiate your Jupyter Notebook, you will need to submit a job that runs the following command:
+To initiate your Jupyter Notebook, you will need to submit a job (**job script below!**) that runs the following command:
 
 ```bash
+# Module loads etc. [...]
+
 srun -n1 jupyter-notebook --no-browser --no-mathjax --sock /beegfs/$USER/jupyter_wn.socket
+# [...]
 ```
 
 This command starts a Jupyter session and directs it to the socket `jupyter_wn.socket` in your `$HOME` directory. This socket will later be used to `ssh` tunnel to the Jupyter notebook.  
