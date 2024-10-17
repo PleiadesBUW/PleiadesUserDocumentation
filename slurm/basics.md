@@ -9,7 +9,7 @@ nav_order: 1
 (also see [hpc-wiki.info/hpc/SLURM](https://hpc-wiki.info/hpc/SLURM))
 
 ### Submitting jobs
-There are multiple login nodes available to submit jobs to the worker nodes: **fugg1** and **fugg2**, and for whep-users higgs, top, up, and down.
+There are multiple login nodes available to submit jobs to the worker nodes: **fugg1** and **fugg2**, and for whep-users up, and down.
 Jobs can run in one out of three partitions, namely:
 - **normal** (default), with a time limit of 4 days
 - **short**, intended for development and tests, with a default time limit of 1 hour
@@ -135,7 +135,7 @@ sacct -u $USER --allocations --starttime 2024-10-01 --format "NodeList" --nohead
 
 ### Apptainer and Slurm
 You can use Singularity in Slurm batch script by just calling the respective command within the script and prepend a srun.  
-Note for members of the whep group: submitting from higgs/top/up/down might be setting your singularity cache within /common/home, which is not available from the worker nodes. Consider using the `SINGULARITY_CACHEDIR` environment variable to define a shared location.
+Note for members of the whep group: submitting from up/down might be setting your singularity cache within /common/home, which is not available from the worker nodes. Consider using the `SINGULARITY_CACHEDIR` environment variable to define a shared location.
 
 
 ### X-Forwarding in Slurm

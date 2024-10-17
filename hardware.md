@@ -16,7 +16,7 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
     - The fugg login nodes are intended for job submission and light interactive workloads.
     - Because of architecture differences and limited resources, you should try to compile your programs through our batch system or work in interactive slurm sessions.
     - `fugg2` has infiniband-enabled access to BeeGFS
-  - `top` and `higgs` (CentOS7), `up` and `down` (Alma Linux 9) - only available to whep users
+  - `top` and `higgs` (CentOS7, not fully operational anymore), `up` and `down` (Alma Linux 9) - only available to whep users
 - **wn21[001-268]**: 
   - 2 sockets with AMD EPYC 7452 32-Core processor. 64 Cores in total
   - Hyperthreading disabled
