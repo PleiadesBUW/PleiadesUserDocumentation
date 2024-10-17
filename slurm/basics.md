@@ -127,8 +127,13 @@ The fair share factor will recover with a half-life of 7 days and all fair share
 - **sshare** - See current fair share and cluster usage
 - **sacct** - Show information about past jobs
 
+For example, you can use `sacct` to find all worker nodes involved with certain user jobs since a given date:
+```bash
+sacct -u $USER --allocations --starttime 2024-10-01 --format "NodeList" --noheader | sort | uniq
+```
 
-### Singularity and Slurm
+
+### Apptainer and Slurm
 You can use Singularity in Slurm batch script by just calling the respective command within the script and prepend a srun.  
 Note for members of the whep group: submitting from higgs/top/up/down might be setting your singularity cache within /common/home, which is not available from the worker nodes. Consider using the `SINGULARITY_CACHEDIR` environment variable to define a shared location.
 
