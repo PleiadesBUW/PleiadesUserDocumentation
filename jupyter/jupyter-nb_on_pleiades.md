@@ -48,7 +48,7 @@ Here is an example:
 # Some initial setup
 module purge
 # This module load instruction is where the Jupyter client comes from
-module load 2022a GCCcore/11.3.0 JupyterHub/3.1.1 JupyterLab/3.5.0
+module load 2023a GCCcore/12.3.0 JupyterHub/5.2.0 JupyterLab/4.2.5
 # Here you can load any additional modules you might need, e.g. for your simulations or for running R notebooks
 # module load my other modules
 

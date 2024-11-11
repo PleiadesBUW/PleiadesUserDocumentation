@@ -5,17 +5,19 @@ parent: Jupyter
 nav_order: 3
 ---
 
+> **Note:** The default conda repository is not generally open to anyone, due to licensing. Consider using `mamba` instead, or configure your configure your conda setup to use the [conda-forge repository](https://conda-forge.org/docs/user/introduction/) by default.
+
 ## Jupyter: Creating custom kernels with IPython
 
 Virtual environments provide a way to create isolated and self-contained Python environments with their own set of packages and dependencies, making it easier to manage different projects without interference. In this section, we will explore the steps required to create a virtual environment using *pip* and *venv* or *Conda* and install the necessary packages for running JupyterLab with IPython kernels. These kernels can then be selected from the JupyterLab interface and will provide the associated virtual environment from within your JupyterLab session.
   
-As long as you want to have a virtual environment, which uses Python 3.10.4 (the Python version of JupyterHub), you can do all steps from within a JupyterLab session's terminal. However, we highly suggest to follow our instructions while on one of the login nodes or on a worker node. Usually, the latter should be preferred, as not to overload the login nodes. Further, if no local Python installation is used for the kernel, the `module load` command should load a Python version with the affix *-bare*. This ensures, that virtual environments will be void of Python modules/packages upon creation (in particular the environment variable *PYTHONPATH* will remain empty).
+As long as you want to have a virtual environment, which uses Python 3.11.3 (the Python version of JupyterHub), you can do all steps from within a JupyterLab session's terminal. However, we highly suggest to follow our instructions while on one of the login nodes or on a worker node. Usually, the latter should be preferred, as not to overload the login nodes. Further, if no local Python installation is used for the kernel, the `module load` command should load a Python version with the affix *-bare*. This ensures, that virtual environments will be void of Python modules/packages upon creation (in particular the environment variable *PYTHONPATH* will remain empty).
   
-We first begin with instructions regarding IPython kernels based on Python 3.10.4. **With the modular structure of PLEIADES' software stack it is not trivial to utilize new IPython kernels for other Python versions than 3.10.4.** Nevertheless, at the end of this section we provide instructions on how to generate IPython kernels for arbitray Python versions (supported by IPython) through *pip* and *venv* only. They require some additional modifications in the *kernel.json* file and correct Python paths. We do not provide support for such custom kernels and therefore user caution is advised. 
+We first begin with instructions regarding IPython kernels based on Python 3.11.3. **With the modular structure of PLEIADES' software stack it is not trivial to utilize new IPython kernels for other Python versions than 3.11.3.** Nevertheless, at the end of this section we provide instructions on how to generate IPython kernels for arbitray Python versions (supported by IPython) through *pip* and *venv* only. They require some additional modifications in the *kernel.json* file and correct Python paths. We do not provide support for such custom kernels and therefore user caution is advised. 
 
-### JupyterHub: Virtual environments with pip for custom IPython kernels (with Python 3.10.4)
+### JupyterHub: Virtual environments with pip for custom IPython kernels (with Python 3.11.3)
 
-Before you start, you need to make sure, that you have Python version 3.10.4 loaded inside your current environment. If you do not have a Python 3.10.4 of your own, you can simply load it through one of the centrally provided`module`.
+Before you start, you need to make sure, that you have Python version 3.11.3 loaded inside your current environment. If you do not have a Python 3.11.3 of your own, you can simply load it through one of the centrally provided`module`.
 You can make sure you are using the desired Python binaries through `which python` and the version through `python --version`.
 Once ready, do the following to customize your virtual environment:
 
@@ -32,7 +34,7 @@ The command from **step 5** installs your kernel into your local directory at `~
 
 
 
-### JupyterHub: Virtual environments with Conda for custom IPython kernels (with Python 3.10.4)
+### JupyterHub: Virtual environments with Conda for custom IPython kernels (with Python 3.11.3)
 
 If you prefer to manage your packages and virtual environments with Conda, you can do this, aswell. To activate the basic Conda environment *(base)* do the following:
 
@@ -55,8 +57,8 @@ If you prefer, you can also install the kernels while directly logged in to PLEI
 
 ### JupyterHub: Virtual environments with pip for custom IPython kernels (other Python versions)
 
-Utilizing kernels with a Python version other than 3.10.4 will result in the kernel not properly loading displayed in the JupyterLab interface as *disconnected*. This originates in the modules loaded for JupyterLab server start-up, which cause conflicts with other python libraries.  
-To generate an IPython kernel for an arbitrary Python version you can initially proceed as you would for a custom IPython kernel with Python 3.10.4:
+Utilizing kernels with a Python version other than 3.11.3 will result in the kernel not properly loading displayed in the JupyterLab interface as *disconnected*. This originates in the modules loaded for JupyterLab server start-up, which cause conflicts with other python libraries.  
+To generate an IPython kernel for an arbitrary Python version you can initially proceed as you would for a custom IPython kernel with Python 3.11.3:
 
 1. Generate the virtual environment: `python -m venv <name_of_virtual_env>`
 2. Activate the virtual environment: `source /pathToVirtualEnvironment/bin/activate`
