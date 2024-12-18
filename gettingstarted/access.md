@@ -8,12 +8,13 @@ nav_order: 1
 ## Getting Started: Access
 ### Getting an account
 If you belong to one of the groups participating in PLEIADES, you can get an account by filling out [this form](https://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag_032024.pdf).
-If your group was **not** involved in PLEIADES, you can still get access, but please contact the support before submitting an account request.
+If your group was **not** involved in PLEIADES, you can still get access, but please contact the support team before submitting an account request.
 In general, you can consult our [HPC.NRW Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download) which outlines the access conditions and procedures.
 Members of the University typically can get an account without much bureaucracy.
 
 Accounts are valid for a given period (max. 3 years).
 At the end, you will receive automatic messages about your account life time and can either contact us about an extensions, if necessary.
+**The extension request should contain an exact extension date and involve your group supervisor**, such that we know that you are still part of your group.
 
 ### Questions/Support
 In case of questions and problems, please use the following email address:
@@ -40,7 +41,7 @@ It automatically allocates a small set of resources that are meant for interacti
 
 
 ### SSH Login
-We recommend to create a password protected [ssh-key](https://hpc-wiki.info/hpc/Ssh_keys) pair to authenticate on login.
+We recommend to create a **password protected** [ssh-key](https://hpc-wiki.info/hpc/Ssh_keys) pair to authenticate on login.
 Additionally you can define in your local `~/.ssh/config`:
 ```
 Host fugg1
@@ -63,7 +64,9 @@ fugg1.pleiades.uni-wuppertal.de
 fugg2.pleiades.uni-wuppertal.de
 ```
 
-This node can be used to develop and test code. Once this is finished jobs can be submitted to the PLEIADES cluster. This machine runs Alma Linux 9. You can login on it using your username, which will be provided by us.
+These nodes can be used to develop and test code. The node is mostly used to submit Slurm batch jobs to the PLEIADES cluster.
+This machine runs Alma Linux 9.
+You can login on it using your username, which will be provided by us.
 Due to massive attacks from all over the world, SSH access is limited to IPs from inside the university's network (`132.195.0.0/16`). In addition, a protection system is used that blocks IP numbers which have been used with several unsuccessful logins. So if you mistype your credentials too often, you will be locked out for a while.
 
 A good practice for using ssh regularly is to setup ssh-keys on your local machine and use
@@ -84,14 +87,7 @@ ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
 
 
 ### Login Nodes (whep users)
-
-The login mechanism for whep users is the same as for all other users, except for the login nodes. There are 2 login nodes running CentOS 7 (not fully operational anymore)
-
-```bash
-higgs.pleiades.uni-wuppertal.de
-top.pleiades.uni-wuppertal.de
-```
-
+The login mechanism for whep users is the same as for all other users, except for the login nodes.
 Since the beginning of 2024, there are also two new machines running Alma Linux 9:
 ```bash
 up.pleiades.uni-wuppertal.de

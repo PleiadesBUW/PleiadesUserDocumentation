@@ -12,12 +12,13 @@ nav_order: 2
 > You can check your own group affiliation with `sshare -U`.
 
 
-There is a general GPU tutorial available at [hpc-wiki.info/hpc/GPU_Tutorial](https://hpc-wiki.info/hpc/GPU_Tutorial).
+> **NOTE:**
+> There is a general GPU tutorial available at [hpc-wiki.info/hpc/GPU_Tutorial](https://hpc-wiki.info/hpc/GPU_Tutorial).
 
 
 ## Slurm: Using GPUs
-This guide is introducing our newly available GPU nodes.
-The configuration is still very fresh, so please contact us if there are problems or if you expect something to behave differently.
+This guide gives a brief overview of our available GPU resources.
+Feel free to contact us if there are problems or if you expect something to behave differently.
 
 
 ### Hardware
@@ -52,6 +53,10 @@ Legend:
   PIX  = Connection traversing at most a single PCIe bridge
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
+
+> **NOTE:**
+> As a consequence of the CPU <-> GPU association, you should always request exactly 16 CPU cores per GPU.
+> This is already the default, so you don't have to request the number of CPU cores yourself.
 
 
 ### Job Submission and Accounting
@@ -96,7 +101,7 @@ Here is an example job script, submitting 8 processes, each with 16 cores and on
 #SBATCH --account=<groupname>_gpu
 #SBATCH -N 1
 #SBATCH --ntasks 8
-#SBATCH --cpus-per-task 16
+#SBATCH --cpus-per-task 16        # Always request 16 cores per GPU. This line can be omitted
 #SBATCH --gpus-per-task 1
 #SBATCH --time=0-01:00:00
 #SBATCH -o %x-%j.out
