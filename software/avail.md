@@ -18,8 +18,8 @@ Finally, you can use [Apptainer containers](../software/containers) to set up a 
     - `module load 2021a NVHPC/21.7`
   - TotalView: Debugger and analyzer
     - `module load 2021a TotalView/2021.3.9`
-  - ARMForge: Debugger and analyzer
-    - `module load 2021a ARMForge/21.1.1`
+  - LinaroForge:
+    - `module load 2023a LinaroForge/24.1.2`
   - NAG Library through modules `NAG` and `NAGfor`
     - When using NAG, you have to source `${EBROOTNAG}/nll6i29dbl/scripts/nagvars.sh` with the correct arguments for your situation, e.g. "int64 vendor static"
     - `module load 2021a intel-compilers/2021.2.0 NAG/27.3.0`
