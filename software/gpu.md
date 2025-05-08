@@ -6,7 +6,7 @@ nav_order: 6
 ---
 
 ## Software: GPU Modules
-There are several software [modules](software/modules) intended for GPU nodes.
+There are several software [modules](../software/modules) intended for GPU nodes.
 This includes certain versions of ("CUDA-enabled") TensorFlow, and others.
 
 You can also install software in your home directory, e.g. setting up a python virtual environment containing TensorFlow:
