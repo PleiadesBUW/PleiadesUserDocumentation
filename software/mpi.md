@@ -17,8 +17,8 @@ nav_order: 3
 (Also see [hpc-wiki.info/hpc/MPI](https://hpc-wiki.info/hpc/MPI))
 
 There are multiple MPI environments available:
-1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1` (and other versions, see `module spider OpenMPI`)
-1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or through Parallel Studio with `source /beegfs/Tools/intel/setup.sh` (Version from 2020)
+1. OpenMPI4: `module load 2023a GCC/12.3.0 OpenMPI/4.1.5` (and other versions, see `module spider OpenMPI`)
+1. Intel MPI: `module load 2025 iimpi/2024a` (oneAPI) or through Parallel Studio with `source /beegfs/Tools/intel/setup.sh` (Version from 2020)
 1. Local package OpenMPI3 in `/lib64/openmpi3` on our worker nodes
 1. Compiling your own MPI libraries
 1. LCG release (See last section of [modules](../software/modules), **not using InfiniBand**)
@@ -57,16 +57,18 @@ Consider reading the [Slurm MPI documentation](https://slurm.schedmd.com/mpi_gui
 #SBATCH -N 4 # 4 Nodes
 #SBATCH -n 4 # 4 processes in total
 
-module load 2021a GCC/10.3.0 OpenMPI/4.1.1
+module load 2023a GCC/12.3.0 OpenMPI/4.1.5
 
 # Option one:
 mpirun /path/to/mpiapplication <arguments>
-
-# Or use srun (not recommended anymore! pmix support likely missing!)
-srun --mpi=pmix_v3 /path/to/mpiapplication <arguments>
 ```
 
 It is possible to pass `--mca` options in these commands as well.
+For example, you can enable warnings if certain MPI objects aren't handled properly and leak:
+
+```
+mpirun -np ... --mca mpi_show_handle_leaks true --mca mpi_no_free_handles true --mca mpi_param_check true /path/to/mpiapplication
+```
 
 
 ### Notes on Intel MPI

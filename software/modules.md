@@ -14,6 +14,7 @@ nav_order: 2
 ## Software: Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users (also see [hpc-wiki.info/hpc/Modules](https://hpc-wiki.info/hpc/Modules)).
 Please have a look at the [LMod user guide](https://lmod.readthedocs.io/en/latest/010_user.html).
+Software modules are available through EESSI, i.e. streaming software on demand from the internet, or through locally compiled and installed software modules.
 
 ### Preparing the EESSI Environment
 The [EESSI project](https://www.eessi.io/) provides many modules through a community driven "streaming service" for scientific software.
@@ -57,6 +58,19 @@ Environment set up to use EESSI (2023.06), have fun!
 Be aware, that more recent versions of the whole software stack might be available in the `/cvmfs/software.eessi.io/versions` directory (here `2023.06`).
 
 You can find [more information about EESSI on hpc-wiki.info](https://hpc-wiki.info/hpc/Streaming_scientific_software_with_EESSI) and the [EESSI documentation](https://www.eessi.io/docs/).
+
+
+### Local Software Stacks
+> **Note:**
+>
+> The software stacks "2019" to "2022" were build against CentOS 7 and are therefor deprecated.
+> Since we've updated the cluster to Alma Linux 9 in 2024, the modules might not work as intended.
+> Prefer to load one of the "2021a_AL", "2023a", or "2025" software stacks.
+> Open a ticket if your software is missing in one of those software stacks or is not available in the EESSI setup!
+
+As an alternative to EESSI, we have locally installed software modules available through versioned software stacks, e.g. "2023a" or "2025".
+These contain requested and commonly used software and commercial software that may not be available through EESSI.
+Prefer to use the EESSI approach, if possible.
 
 
 ### Finding Modules
