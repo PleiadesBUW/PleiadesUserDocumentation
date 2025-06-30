@@ -21,6 +21,8 @@ $ cat testjob.sh
 #SBATCH --nodes=4-8       # at least 4 nodes, up to 8
 #SBATCH --ntasks=8        # 16 processes
 #SBATCH --mem-per-cpu=128 # in MB, up to 3800MB per core
+
+# Commands to run for the resources requested above:
 srun hostname | sort
 
 $ sbatch testjob.sh

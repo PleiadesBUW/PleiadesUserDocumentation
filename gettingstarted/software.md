@@ -9,7 +9,7 @@ nav_order: 2
 
 ### Available Software
 Our centrally provided software installations are offered through [modules](../software/modules) (also see [hpc-wiki.info/hpc/Modules](https://hpc-wiki.info/hpc/Modules)).
-The `LMod` command `module` is used to make certain programs in a specific version available to your current shell.
+The LMod-command `module` is used to make certain programs in a specific version available to your current shell.
 
 You can load modules from the [EESSI Projects](https://www.eessi.io/) through `/cvmfs/software.eessi.io`, or local centrally provided modules located in `/beegfs/tools`.
 We recommend trying the EESSI approach first, as described in our [Software documentation](../software/modules).
@@ -50,7 +50,7 @@ On our cluster, we have the following storage systems:
 
 * **Workernode local storage** in `/tmp` (**no backup!**): 2TB of fast SSD storage per node. Great place for active work directories in jobs.
 * **BeeGFS** in `/beegfs` (**no backup!**): >900TB shared storage accessible in all nodes. Home directory to all users and intended for storing results and organizing data. I/O intensive jobs should avoid on interacting directly with `/beegfs`.
-* **CVMFS** in `/cvmfs`: Read-only storage to distribute special software.
+* **CVMFS** in `/cvmfs`: Read-only storage to distribute special software, e.g. the EESSI modules.
 * **NFS** in `/common/home` (regular backup): Home directory for users of the whep group
 
 For more information, please consult our [file system documentation](../filesystem).
