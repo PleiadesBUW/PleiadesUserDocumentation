@@ -109,6 +109,24 @@ Here is an example job script, submitting 8 processes, each with 16 cores and on
 srun -n8 nvidia-smi topo -m
 ```
 
+Additionally, the `gpushort` partition allows for smaller short-running jobs to be submitted with higher priority:
+```
+$ scontrol show part gpushort
+PartitionName=gpushort
+   AllowGroups=ALL AllowAccounts=pleiades_gpu,easybuild AllowQos=ALL
+   AllocNodes=ALL Default=NO QoS=N/A
+   DefaultTime=01:00:00 DisableRootJobs=NO ExclusiveUser=NO GraceTime=0 Hidden=NO
+   MaxNodes=1 MaxTime=12:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED
+   Nodes=gpu[21001-21005]
+   PriorityJobFactor=2 PriorityTier=2 RootOnly=NO ReqResv=NO OverSubscribe=NO
+   OverTimeLimit=NONE PreemptMode=OFF
+   State=UP TotalCPUs=640 TotalNodes=5 SelectTypeParameters=NONE
+   JobDefaults=DefCpuPerGPU=16
+   DefMemPerCPU=16000 MaxMemPerCPU=32000
+   TRES=cpu=640,mem=10320000M,node=5,billing=161250,gres/gpu:a100=40
+   TRESBillingWeights=CPU=1.0,Mem=16G,GRES/gpu:a100=16.0
+```
+
 
 ### Which GPUs is my Job Using?
 When you use only a couple of available GPUs on a system, you might wonder **which**.
