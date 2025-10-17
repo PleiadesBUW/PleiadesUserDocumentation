@@ -28,22 +28,14 @@ The certificate can/should be copied to all devices/browsers which need it.
 
 The [GÉANT](https://geant.org/) CA is part of The [International Grid Trust Federation (IGTF)](http://www.igtf.net/){:target="_blank" rel="noopener"}  hence Grid user certificates are accepted by all Grid sites in WLCG. In order to facilitate the request procedure, many institutions in Germany operated Registration Authorities (RA) which take over the necessary paper-work on behalf of the CA.
 
-BUW employees may use their ZIM account to authenticate against GÉANT and request a Grid user certificate. Use the portal [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/){:target="_blank" rel="noopener"}  to test your account. 
-
-Non-BUW users can not use the portal and should rather check with their home institution officials how to proceed.
+After the end of the co-operation with Sectigo, the process is unfortunately a bit more paperwork than it was before.
 
 ## Procedure
 
-**There seem to be problems with the GEANT User Certificates when using those with for example AMI. Please use the alternative way (see 2. "In case of problems") for the time being** 
 
-1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/){:target="_blank" rel="noopener"} . If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
-2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant){:target="_blank" rel="noopener"} .
-   - profile: GÉANT IGTF-MICS Personal
-   - choose Enrollment Method: Key Generation
-   - Key Type: RSA-4096
-   - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq){:target="_blank" rel="noopener"} 
-   - **In case of problems**, e.g. if you don't have an employee ZIM account and start the request as a student: Request a "Nutzerzertifikat"/"User certificate" at [pki.pca.dfn.de/](https://pki.pca.dfn.de/grid-root-ca/cgi-bin/pub/pki?cmd=getStaticPage&name=index&RA_ID=165)
-3. after a short while the new cert can be downloaded from the page
+1. Request a "Nutzerzertifikat"/"User certificate" at [the DFN PKI page for Wuppertal](https://pki.pca.dfn.de/grid-root-ca/cgi-bin/pub/pki?cmd=getStaticPage&name=index&RA_ID=165). Keep the "Antragsdatei" (a json file) in a safe place and **do not loose it**. It contains your certificate key, which cannot be recovered if this file gets lost.
+2. With the printed form, visit Torsten Harenberg together with a piece of government ID (national ID card or passport)
+3. after a short while, you will receive an email with instructions how to download the new certificate. You will need the "Antragsdatei" generated in step 1 for that.
 4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
    - Download the `certs.p12` file the User Cert Manager offers you.
    - copy it to `~/.globus/certs.p12`
