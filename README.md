@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17540568.svg)](https://doi.org/10.5281/zenodo.17540568)
+<a href="https://doi.org/10.5281/zenodo.17540567"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17540567.svg" alt="DOI"></a>
 
 
 # PLEIADES Github Pages Docs

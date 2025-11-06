@@ -14,5 +14,5 @@ If you want to add a link, you can also point to [https://pleiades.uni-wuppertal
 ## Citing This Documentation
 You can cite this documentation about the PLEIADES cluster via this zenodo DOI:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17540568.svg)](https://doi.org/10.5281/zenodo.17540568)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17540567.svg)](https://doi.org/10.5281/zenodo.17540567)
 
