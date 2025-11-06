@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17540568.svg)](https://doi.org/10.5281/zenodo.17540568)
+
+
 # PLEIADES Github Pages Docs
 
 Visit the [hosted documentation here](https://pleiadesbuw.github.io/PleiadesUserDocumentation/).
