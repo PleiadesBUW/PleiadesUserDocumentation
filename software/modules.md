@@ -201,6 +201,26 @@ $ which cmake
 You would use such a `module load` command, whenever you prepare your environment for interactive work, as well as in batch job scripts.
 
 
+### Compiling Software Against Modules
+> **Note:** If you are building/compiling software against one of the more recent software stacks (2025 and newer),
+> you may need to additionally load the `buildenv/default` module! Recent versions of EasyBuild build all modules
+> with `RPATH` linking to reduce the size of the `LD_LIBRARY_PATH` environment variable, which improves loading
+> times on shared file systems like our `/beegfs`.
+>
+> The `buildenv` module automatically sets up the environment such that you don't have to do anything to treat
+> `RPATH`s correctly. Without it, you may experience errors like version mismatches for `GLIBCXX` in `libstdc++`.
+
+You can compile your own software by loading all dependencies as software modules and then following the software compilation documentation.
+Often you need to do something like, for example,
+
+```bash
+module load 2025 GCC/14.2.0 make/4.4.1 CMake/3.31.3 Python/3.13.1 buildenv/default
+```
+
+if you require a C/C++ compiler, make, CMake, Ninja, and Python.
+Use `module spider` to look for other dependencies and load them as well.
+
+
 ### Background Information: Hierarchical Naming Scheme
 The module visibility is following a hierarchical naming scheme.
 It means that software only becomes visible to the `module available` command, after it's dependencies are loaded.
