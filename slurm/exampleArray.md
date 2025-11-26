@@ -7,7 +7,7 @@ nav_order: 3
 
 ## Slurm example: Job arrays
 Job arrays can be used to submit many (e.g. thousands) similar small/short jobs.
-They can reduce the load from the central Slurm controller, so prefer job arrays over many small individual jobs!
+They can reduce the load from the central Slurm controller during job-transmission and simplify the management of similar jobs with various Slurm commands.
 
 A job script could look like this:
 ```bash
