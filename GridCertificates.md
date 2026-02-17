@@ -45,7 +45,7 @@ The procedure you need to follow to optain a certificate depends on the CA you w
 ## Procedure for DFN
 
 
-1. Request a "Nutzerzertifikat"/"User certificate" at [the DFN PKI page for Wuppertal](https://pki.pca.dfn.de/grid-root-ca/cgi-bin/pub/pki?cmd=getStaticPage&name=index&RA_ID=165). Keep the "Antragsdatei" (a json file) in a safe place and **do not loose it**. It contains your certificate key, which cannot be recovered if this file gets lost.
+1. Request a "Nutzerzertifikat"/"User certificate" at [the DFN PKI page for Wuppertal](https://pki.pca.dfn.de/dfn-pki/grid-root-ca/165). Keep the "Antragsdatei" (a json file) in a safe place and **do not loose it**. It contains your certificate key, which cannot be recovered if this file gets lost.
 2. With the printed form, visit Torsten Harenberg together with a piece of government ID (national ID card or passport)
 3. after a short while, you will receive an email with instructions how to download the new certificate. You will need the "Antragsdatei" generated in step 1 for that.
 4. continue with the Common procedures below
