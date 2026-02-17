@@ -129,17 +129,31 @@ PartitionName=gpushort
 
 
 ### Which GPUs is my Job Using?
-When you use only a couple of available GPUs on a system, you might wonder **which**.
+When you use only a couple of available GPUs on a system, you might wonder **which** exactly.
+Once a job is running, you can `ssh` into that particular node and use the `nvidia-smi` tool to see all GPUs available to that job.
+The GPU IDs range from 0 to 7.
+
 When submitting your jobs through Slurm, your job will have the `CUDA_VISIBLE_DEVICES` environment variable, which lists your GPU IDs, e.g.:
 
 ```
 user@gpu21005:~$ env | grep CUDA_VISIBLE
-CUDA_VISIBLE_DEVICES=2,6
+CUDA_VISIBLE_DEVICES=0,1
 ```
 
-The GPU IDs range from 0 to 7, and match the GPU IDs reported via the `nvidia-smi` tool or in our [monitoring system](../gettingstarted/zabbix).
+Only if you use all GPUs of a node, they map to the IDs in our [monitoring system](../gettingstarted/zabbix).
 
-You may add `echo $CUDA_VISIBLE_DEVICES` to your Slurm job script in order to see which GPUs each job is using.
+If you use fewer than 8 GPUs of a single node, you can use the "Bus-Id" in the output of `nvidia-smi` to figure out which of the GPU IDs in zabbix correspond to the GPUs of your job:
+
+| ID in Zabbix | Bus ID in `nvidia-smi` |
+|--------------|------------------------|
+| 0            | 00000000:0E:00.0       |
+| 1            | 00000000:13:00.0       |
+| 2            | 00000000:49:00.0       |
+| 3            | 00000000:4F:00.0       |
+| 4            | 00000000:92:00.0       |
+| 5            | 00000000:98:00.0       |
+| 6            | 00000000:CD:00.0       |
+| 7            | 00000000:D2:00.0       |
 
 
 ### Software
