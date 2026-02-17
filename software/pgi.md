@@ -19,7 +19,7 @@ PGI provides tools to develop programs in a heterogeneous environment (CPUs & GP
 - Debugging tools to investigate differences between CPU & accelerators
 - Profiling tools
 
-The PGI license is made available through the HPC.NRW Kompetenznetzwerk.
+The PGI license is made available through the HPC.nrw Kompetenznetzwerk.
 
 
 ### Setup
