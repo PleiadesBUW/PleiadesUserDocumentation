@@ -1,3 +1,10 @@
+---
+title: "PyCharm Pro with PLEIADES"
+layout: default
+parent: Software on PLEIADES
+nav_order: 1
+---
+
 # Using PyCharm Pro with PLEIADES
 
 Note: this documentation is beta!
