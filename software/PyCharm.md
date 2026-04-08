@@ -35,7 +35,7 @@ For this, you'll have to open a project (existing or new one).
 
 Go to: Settings->Python->Interpreter. Click on "Add Interpreter" and configure the ssh connection:
 
-[![SSH Configuration](./assets/img/pycharm/create_ssh.png)](../assets/img/pycharm/create_ssh.png)
+[![SSH Configuration](../assets/img/pycharm/create_ssh.png)](../assets/img/pycharm/create_ssh.png)
 
 Sometimes, the last step (4) hangs, in which case just close the window and start over. The last step can take around 30 seconds. 
 
@@ -45,7 +45,7 @@ Go to: Settings->Build, Execution, Deployment -> Deployment
 
 Verify that the remote connection is there (should be automatically), click on `Autodetect` at `Root path`. You screen should look like this:
 
-[![Deployment](./assets/img/pycharm/configure_deployment.png)](../assets/img/pycharm/configure_deployment.png)
+[![Deployment](../assets/img/pycharm/configure_deployment.png)](../assets/img/pycharm/configure_deployment.png)
 
 ### Step 2.3: adding modules remotely
 
@@ -53,7 +53,7 @@ If your python project needs additional Python modules, go to
 
 Settings->Python->Interpreter->(check that the remote connection is selected)->click on the small `+` and choose your package
 
-[![Modules](./assets/img/pycharm/install_module_remotely.png)](../assets/img/pycharm/install_module_remotely.png)
+[![Modules](../assets/img/pycharm/install_module_remotely.png)](../assets/img/pycharm/install_module_remotely.png)
 
 ## Step 3: Setting the "configuration"
 
@@ -63,18 +63,18 @@ In the window there is on the right hand side a small Python icon followed by so
 where you define these environments, click in the small "pull-down-arrow", which opens "Run/Debug Configurations", select "Python",
 the SSH connection should already be there, at "script" you'd need to tell him which your main Python file is, that's it.
 
-[![Configurations](./assets/img/pycharm/configure_configuration.png)](../assets/img/pycharm/configure_configuration.png)
+[![Configurations](../assets/img/pycharm/configure_configuration.png)](../assets/img/pycharm/configure_configuration.png)
 
 ## Running your code.
 
 A click on the green right arrow on the upper right corner should now run your code nicely:
 
-[![Running Code](./assets/img/pycharm/running_code.png)](../assets/img/pycharm/running_code.png)
+[![Running Code](../assets/img/pycharm/running_code.png)](../assets/img/pycharm/running_code.png)
 
 ## Optional: remote SSH into your project
 
 A remote terminal is always nice to have. Once you finished the steps above, the Terminal feature (lower left corner of PyCharm) should
 have an entry now which brings you immediately into your project:
 
-[![SSH](./assets/img/pycharm/start_remote_ssh.png)](../assets/img/pycharm/start_remote_ssh.png)
+[![SSH](../assets/img/pycharm/start_remote_ssh.png)](../assets/img/pycharm/start_remote_ssh.png)
 
