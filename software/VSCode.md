@@ -155,4 +155,4 @@ After authentication, the VS Code Interface will be available in your browser.
 
 ### Key Takeaway
 
-> #### VS Code workloads should be executed on compute nodes (`fugg*`) using `code-server`; login nodes are intended only for access and orchestration. Using compute nodes helps avoid job interruptions or terminations due to resource constraints (e.g., memory limits) on login nodes.
+> #### VS Code workloads should be executed on compute nodes (`wn*`) using `code-server`; login nodes (`fugg*`) are intended only for access and orchestration. Using compute nodes helps avoid job interruptions or terminations due to resource constraints (e.g., memory limits) on login nodes.
