@@ -17,24 +17,24 @@ At the end, you will receive automatic messages about your account life time and
 **The extension request should contain an exact extension date and involve your group supervisor**, such that we know that you are still part of your group.
 
 ### Account details: You will get the access details by an email after granting access rights
-> Dear User,
+> Dear `<user>`,
 >
 > your PLEIADES account has been created:
 >
->   username -> `<user>`
->   password -> `<password>`
+> &nbsp;&nbsp;&nbsp;&nbsp;username -> `<user>`  
+> &nbsp;&nbsp;&nbsp;&nbsp;password -> `<password>`
 >
 > Your home directory on the cluster is: `/beegfs/<user>`
 >
-> Please read through our documentation at https://pleiadesbuw.github.io/PleiadesUserDocumentation/.
-> Especially the "Getting Started" and "Access and Login" sections are essential.
-> Here, we describe how to change your account password with "passwd" on your first log in.
-> You have to change your password, since we are transmitting it in this e-mail unencrypted.
+> Please read through our documentation at https://pleiadesbuw.github.io/PleiadesUserDocumentation/.  
+> Especially the "Getting Started" and "Access and Login" sections are essential.  
+> Here, we describe how to change your account password with "passwd" on your first log in.  
+> You have to change your password, since we are transmitting it in this e-mail unencrypted.  
 >
 > If you have questions, feel free to contact us at pleiades@uni-wuppertal.de (or reply to this mail).
 >
-> Kind Regards
->     Your PLEIADES Team
+> Kind Regards  
+> &nbsp;&nbsp;&nbsp;&nbsp;Your PLEIADES Team
 
 ### Questions/Support
 In case of questions and problems, please use the following email address:
