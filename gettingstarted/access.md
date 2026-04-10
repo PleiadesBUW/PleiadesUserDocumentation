@@ -16,6 +16,26 @@ Accounts are valid for a given period (max. 3 years).
 At the end, you will receive automatic messages about your account life time and can either contact us about an extensions, if necessary.
 **The extension request should contain an exact extension date and involve your group supervisor**, such that we know that you are still part of your group.
 
+### Account details: You will get the access details by an email after granting access rights
+> Dear User,
+>
+> your PLEIADES account has been created:
+>
+>   username -> `<user>`
+>   password -> `<password>`
+>
+> Your home directory on the cluster is: `/beegfs/<user>`
+>
+> Please read through our documentation at https://pleiadesbuw.github.io/PleiadesUserDocumentation/.
+> Especially the "Getting Started" and "Access and Login" sections are essential.
+> Here, we describe how to change your account password with "passwd" on your first log in.
+> You have to change your password, since we are transmitting it in this e-mail unencrypted.
+>
+> If you have questions, feel free to contact us at pleiades@uni-wuppertal.de (or reply to this mail).
+>
+> Kind Regards
+>     Your PLEIADES Team
+
 ### Questions/Support
 In case of questions and problems, please use the following email address:
 
@@ -95,3 +115,113 @@ down.pleiades.uni-wuppertal.de
 ```
 
 **Only whep users can log into up, and down!**
+
+
+### Advanced SSH logins
+
+The following configurations are optional and intended to simplify access to the cluster.
+Users may choose between a **basic configuration (recommended)** and an **advanced configuration (ProxyJump)** based on their workflow.
+
+#### Way 1: Basic SSH Configuration (Recommended)
+
+Add the following to your `~/.ssh/config` file:
+
+```
+Host fugg1 fugg2
+    Hostname %h.pleiades.uni-wuppertal.de
+
+Match Host fugg1.pleiades.uni-wuppertal.de,fugg2.pleiades.uni-wuppertal.de
+    User user
+    IdentityFile ~/.ssh/pleiades
+    ControlMaster no
+    ControlPath ~/.ssh/control-%h-%p-%r
+    ControlPersist 2h
+```
+
+##### Advantages:
+- Simple and transparent connection workflow
+- Easier to debug connection issues
+- Clearly separates login nodes and compute nodes
+- Recommended for most users
+
+##### Typical Usage:
+
+```
+ssh fugg1
+```
+
+Then:
+- allocate a compute node (e.g., using `srun` or `salloc`)
+- establish port forwarding if required. For more information, see the [ssh](https://man7.org/linux/man-pages/man1/ssh.1.html) manual.
+
+Alternatively, the following advanced configuration may be used:
+
+#### Way 2: Advanced SSH Configuration (ProxyJump)
+
+This configuration allows direct SSH access to compute nodes via the login node using the ProxyJump mechanism.
+
+Add the following to your `~/.ssh/config` file:
+
+```
+Host fugg1 fugg2
+    Hostname %h.pleiades.uni-wuppertal.de
+
+Match Host fugg1.pleiades.uni-wuppertal.de,fugg2.pleiades.uni-wuppertal.de
+    User user
+    IdentityFile ~/.ssh/pleiades
+    ControlMaster no
+    ControlPath ~/.ssh/control-%h-%p-%r
+    ControlPersist 2h
+
+Host wn21*
+    Hostname %h.pleiades.uni-wuppertal.de
+
+Match Host wn21*.pleiades.uni-wuppertal.de
+    User user
+    IdentityFile ~/.ssh/pleiades
+    ProxyJump fugg1
+    StrictHostKeyChecking accept-new
+```
+
+> **Note:**
+>
+> Use either `fugg1` or `fugg2` as the jump host.
+> Avoid specifying multiple jump hosts simultaneously to ensure deterministic behaviour, thereby ensuring predictable routing (`local -> fugg1 -> wn21*`)
+
+##### Advantages:
+- Enables direct access to compute nodes
+- Reduces the number of manual SSH steps required
+- More efficient for repeated or advanced usage
+
+##### Typical Usage:
+
+> **Warning:**
+>
+> - Ensure that the compute node **`wn21101`** is allocated and actively running (e.g., via `srun` or `salloc`) before connecting.
+> - Connection will fail if the job has not started or has already terminated.
+
+
+> **Hint:**
+>
+> The hostname (e.g., `wn21101`) is assigned dynamically by the scheduler and must be obtained from `squeue --me` or the job output.
+
+```
+ssh wn21101
+```
+
+or with port forwarding:
+
+```
+ssh -L 8080:localhost:8080 wn21101
+```
+
+> **Summary of SSH Connections:**
+>
+> - The login nodes (`fugg*`) remain the gateway to the cluster, even when using ProxyJump
+> - The advanced configuration is optional and intended for experienced users
+> - Both methods provide equivalent functionality; ProxyJump primarily improves convenience
+
+> **Recommendation:**
+>
+> - Use **Way 1 (Basic SSH)** if you are new to the cluster or debugging issues
+> - Use **Way 2 (ProxyJump)** for repeated workflows and automation
