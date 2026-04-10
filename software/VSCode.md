@@ -1,19 +1,18 @@
 ---
-title: "Visual Studio Code (VS Code) with PLEIADES"
+title: "VS Code via code-server"
 layout: default
 parent: Software on PLEIADES
 nav_order: 1
 ---
 
-# Using VS Code with PLEIADES
+# Using Visual Studio Code (VS Code) on Web Browser with PLEIADES
 
-Important Notes:
+## Important Notes:
 
-- **Do not use VS Code Remote SSH from your local machine.**
+- **We recommend avoiding the use of VS Code Remote SSH from your local machine.**
   Connecting via SSH directly from the VS Code desktop application can lead to significant resource contention on login nodes due to multiple background processes (e.g., language servers, file watchers).
 - This guide describes how to use VS Code via `code-server` in a web browser environment.
-  This ensures that all workloads run on compute nodes, avoiding unnecessary load on login nodes.
-- Your development environment runs entirely on PLEIADES, making you independent of your local operating system. 
+  This ensures that all workloads run on compute nodes and avoids unnecessary load on login nodes.
 - **Ensure that you are connected to the Wuppertal University VPN before starting.** 
 
 ## Step 1: Configure OpenSSH (one-time setup)
@@ -45,8 +44,12 @@ ssh fugg1
 Example:
 
 ```
-srun --ntasks=1 --nodes=1 --partition=short --time=00:30:00 --pty /bin/bash
+srun --ntasks=1 --nodes=1 --partition=short --cpus-per-task=2 --time=00:30:00 --pty /bin/bash
 ```
+
+>
+> **Hint:** Choose the SLURM parameters (e.g., `--cpus-per-task`, `--partition`) as required.
+>
 
 Check job status:
 
@@ -75,9 +78,11 @@ Run the following command on the compute node:
 ```
 PASSWORD=test code-server --bind-addr 0.0.0.0:8080 --auth password
 ```
-
-- Replace `test` with a secure password.
-- Port `8080` is used for access via SSH port forwarding from your local machine.
+> **Note:**
+> - We recommend configuring the `PASSWORD` variable for additional security.
+> - If password protection is not enabled, other users may gain access to your account and data.
+> - Replace `test` with a **secure password**.
+> - Port `8080` is used for access via SSH port forwarding from your local machine.
 
 Terminal Output:
 
@@ -93,26 +98,32 @@ Terminal Output:
 [2026-04-09T21:29:16.960Z] info  Session server listening on /common/home/user/.local/share/code-server/code-server-ipc.sock
 ```
 
-**Security Note**
-
-Binding to `0.0.0.0` exposes the service on all network interfaces.
-Always use authentication (`--auth password`) to prevent unauthorized access.
+> **Security Note:**
+>
+> - Binding to `0.0.0.0` exposes the service on all network interfaces.
+> - Always use authentication (`--auth password`) to prevent unauthorized access.
+>
+> - Without proper authentication, the service may be accessible to other users within the network.
+> - If an attacker gains access (e.g., by discovering the port and password), they can control the VS Code session and execute commands with your user privileges, potentially compromising your account, data, and running jobs.
 
 ## Step 3: Access VS Code from Your Local Machine
 
-On your **local machine**, open or launch a new terminal and run:
+On your **local machine**, open a new terminal and run:
 
 ```
 ssh -L 8080:wn21101:8080 fugg1
 ```
 
 Replace `wn21101` with your allocated compute node.
-Keep this SSH session open while using VS Code in your browser.
+**Ensure this SSH session remains active while using VS Code in your browser.**
 Then open a browser and navigate to `http://localhost:8080`.
 
 [![Web browser localhost login](../assets/img/vscode/01_localhost_login.png)](../assets/img/vscode/01_localhost_login.png)
 
-> #### **Do not use `0.0.0.0` in the browser URL.**
+> **Warning:** Do not use `0.0.0.0` in the browser URL.
+>
+> - The address `0.0.0.0` is used by services to bind all network interfaces, but it is not a valid destination address for client connections.
+> - Always use `http://localhost:8080` after establishing the SSH tunnel.
 
 Enter the password:
 - either from `~/.config/code-server/config.yaml`
@@ -126,10 +137,12 @@ After authentication, the VS Code Interface will be available in your browser.
 
 ## Step 4: Terminate the Session
 
-- To logout:
+- To **logout**:
   Use "Sign out of code-server" from the application menu.
-- To stop the service:
+- To **stop the service**:
   Press `Ctrl + C` in the terminal running `code-server`.
+- To **exit** the compute node:
+  Run the command `exit` on the terminal to make it available for other users.
 
 [![VS Code web Sign out](../assets/img/vscode/04_signout.png)](../assets/img/vscode/04_signout.png)
 
@@ -142,4 +155,4 @@ After authentication, the VS Code Interface will be available in your browser.
 
 ### Key Takeaway
 
-> #### VS Code workloads must be executed on compute nodes using `code-server`; login nodes should only be used for access and orchestration.
+> #### VS Code workloads should be executed on compute nodes (`fugg*`) using `code-server`; login nodes are intended only for access and orchestration. Using compute nodes helps avoid job interruptions or terminations due to resource constraints (e.g., memory limits) on login nodes.
