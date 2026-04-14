@@ -26,10 +26,7 @@ At the end, you will receive automatic messages about your account life time and
 >
 > Your home directory on the cluster is: `/beegfs/<user>`
 >
-> Please read through our documentation at https://pleiadesbuw.github.io/PleiadesUserDocumentation/.  
-> Especially the "Getting Started" and "Access and Login" sections are essential.  
-> Here, we describe how to change your account password with "passwd" on your first log in.  
-> You have to change your password, since we are transmitting it in this e-mail unencrypted.  
+> ...
 >
 > If you have questions, feel free to contact us at pleiades@uni-wuppertal.de (or reply to this mail).
 >
@@ -154,11 +151,19 @@ Then:
 - allocate a compute node (e.g., using `srun` or `salloc`)
 - establish port forwarding if required. For more information, see the [ssh](https://man7.org/linux/man-pages/man1/ssh.1.html) manual.
 
+> **Important:**
+>
+> The above described **Way 1** allows users to connect from a *local machine* to a *Login node* using **SSH**.
+
+> **Typical Connection Flow:**
+>
+> - Local Machine -> Login Node (`fugg*`) -> SLURM Allocation -> Compute Node (`wn*`) -> Exit (release resources)
+
 Alternatively, the following advanced configuration may be used:
 
 #### Way 2: Advanced SSH Configuration (ProxyJump)
 
-This configuration allows direct SSH access to compute nodes via the login node using the ProxyJump mechanism.
+This configuration enables direct SSH access to compute nodes via the login node using the ProxyJump mechanism.
 
 Add the following to your `~/.ssh/config` file:
 
@@ -199,6 +204,7 @@ Match Host wn21*.pleiades.uni-wuppertal.de
 >
 > - Ensure that the compute node **`wn21101`** is allocated and actively running (e.g., via `srun` or `salloc`) before connecting.
 > - Connection will fail if the job has not started or has already terminated.
+> - Release allocated resources after completion by exiting the compute node (`exit`).
 
 
 > **Hint:**
@@ -214,6 +220,21 @@ or with port forwarding:
 ```
 ssh -L 8080:localhost:8080 wn21101
 ```
+
+> **Important:**
+>
+> The above described **Way 2** enables direct **SSH** access to a *Compute node* from a *local machine* using ProxyJump.
+> - Step 1: Ensure access to a *login node* from your *local machine* (See **Way 1**).
+> - Step 2: Allocate a *compute node* using `salloc` or `srun`.
+> - Step 3: Verify that the *compute node* is allocated and in a running state using `squeue --me`.
+> - Step 4: Open a new terminal and connect to the allocated *compute node* via **SSH**.
+> - Step 5: Once the work is completed, exit the *compute node* using the `exit` command to release resources for other users.
+
+> **Typical Connection Flow:**
+>
+> - Local Machine -> Login Node (`fugg*`) -> SLURM Allocation -> Compute Node (`wn*`)
+> - Local Machine (new terminal) -> ProxyJump (`fugg*`) -> Compute Node (`wn*`)
+> - Exit (release resources)
 
 > **Summary of SSH Connections:**
 >
