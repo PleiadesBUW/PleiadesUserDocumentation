@@ -2,7 +2,7 @@
 title: "PyCharm Pro with PLEIADES"
 layout: default
 parent: Software on PLEIADES
-nav_order: 1
+nav_order: 7
 ---
 
 # Using PyCharm Pro with PLEIADES

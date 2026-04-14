@@ -2,7 +2,7 @@
 title: "VS Code via code-server"
 layout: default
 parent: Software on PLEIADES
-nav_order: 1
+nav_order: 8
 ---
 
 # Using Visual Studio Code (VS Code) on Web Browser with PLEIADES
