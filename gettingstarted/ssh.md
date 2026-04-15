@@ -5,7 +5,7 @@ parent: Getting Started
 nav_order: 5
 ---
 
-### Advanced SSH logins
+### Advanced Secure Shell (SSH) logins
 
 The following configurations are optional and intended to simplify access to the cluster.
 Users may choose between a **basic configuration (recommended)** and an **advanced configuration (ProxyJump)** based on their workflow.
