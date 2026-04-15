@@ -5,12 +5,12 @@ parent: Getting Started
 nav_order: 5
 ---
 
-### Advanced Secure Shell (SSH) logins
+# Advanced Secure Shell (SSH) logins
 
 The following configurations are optional and intended to simplify access to the cluster.
 Users may choose between a **basic configuration (recommended)** and an **advanced configuration (ProxyJump)** based on their workflow.
 
-#### Way 1: Basic SSH Configuration (Recommended)
+## Way 1: Basic SSH Configuration (Recommended)
 
 Add the following to your `~/.ssh/config` file:
 
@@ -26,13 +26,13 @@ Match Host fugg1.pleiades.uni-wuppertal.de,fugg2.pleiades.uni-wuppertal.de
     ControlPersist 2h
 ```
 
-##### Advantages:
+### Advantages:
 - Simple and transparent connection workflow
 - Easier to debug connection issues
 - Clearly separates login nodes and compute nodes
 - Recommended for most users
 
-##### Typical Usage:
+### Typical Usage:
 
 ```
 ssh fugg1
@@ -52,7 +52,7 @@ Then:
 
 Alternatively, the following advanced configuration may be used:
 
-#### Way 2: Advanced SSH Configuration (ProxyJump)
+## Way 2: Advanced SSH Configuration (ProxyJump)
 
 This configuration enables direct SSH access to compute nodes via the login node using the ProxyJump mechanism.
 
@@ -84,14 +84,14 @@ Match Host wn21*.pleiades.uni-wuppertal.de
 > Use either `fugg1` or `fugg2` as the jump host.
 > Avoid specifying multiple jump hosts simultaneously to ensure deterministic behaviour, thereby ensuring predictable routing (`local -> fugg1 -> wn21*`)
 
-##### Advantages:
+### Advantages:
 - Enables direct access to compute nodes, allowing interaction with allocated (exclusive) resources that are not available on shared login nodes
     - Example: Run and access interactive services on compute nodes such as port forwarding for `VS Code` sessions
 - Reduces the number of manual SSH steps required
 - More efficient for repeated or advanced usage
 - Ensures interactive workloads are executed on compute nodes instead of shared login nodes
 
-##### Typical Usage:
+### Typical Usage:
 
 > **Warning:**
 >
