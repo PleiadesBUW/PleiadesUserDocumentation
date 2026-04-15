@@ -72,6 +72,8 @@ More info about ssh keys is available in the [corresponding github documentation
 
 > **Note:** This approach is also more secure, since mis-typing the URL for `uni-wuppertal.de` could expose your credentials to a malicious server that is not in our control.
 
+> **Note:**
+> Refer [SSH](../gettingstarted/ssh) for more **SSH** workflows.
 
 ### Login Nodes (all users except "whep" users)
 There are two login machine from which the cluster can be operated. They are:
@@ -112,6 +114,3 @@ down.pleiades.uni-wuppertal.de
 ```
 
 **Only whep users can log into up, and down!**
-
-> **Note:**
-> Refer [SSH](../gettingstarted/ssh) for advanced **SSH** logins.

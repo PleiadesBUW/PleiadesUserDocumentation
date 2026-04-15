@@ -86,10 +86,7 @@ Match Host wn21*.pleiades.uni-wuppertal.de
 
 ##### Advantages:
 - Enables direct access to compute nodes, allowing interaction with allocated (exclusive) resources that are not available on shared login nodes
-    - Example 1: Monitor and debug running applications interactively on compute nodes
-        - e.g., using `htop` to observe CPU and memory usage
-    - Example 2: Run and access interactive services on compute nodes
-        - e.g., port forwarding for `VS Code code-server` or Jupyter sessions
+    - Example: Run and access interactive services on compute nodes such as port forwarding for `VS Code` sessions
 - Reduces the number of manual SSH steps required
 - More efficient for repeated or advanced usage
 - Ensures interactive workloads are executed on compute nodes instead of shared login nodes
