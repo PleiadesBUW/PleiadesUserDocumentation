@@ -62,7 +62,7 @@ We recommend to create a **password protected** [ssh-key](https://hpc-wiki.info/
 Additionally you can define in your local `~/.ssh/config`:
 ```
 Host fugg1
-    User <USERNAME>
+    User <username>
     Hostname fugg1.pleiades.uni-wuppertal.de
     IdentityFile ~/.ssh/<KEYNAME>
 ```
@@ -95,9 +95,9 @@ A good practice for using ssh regularly is to setup ssh-keys on your local machi
 # and set a password!
 ssh-keygen -t ed25519
 # copy the ssh key to fugg1
-ssh-copy-id USERNAME@fugg1.pleiades.uni-wuppertal.de
+ssh-copy-id <username>@fugg1.pleiades.uni-wuppertal.de
 # Login will now use the ssh key
-ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
+ssh <username>@fugg1.pleiades.uni-wuppertal.de
 ```
 
 (from your local machine) to enable a key-based login on the frontend.
