@@ -114,4 +114,4 @@ down.pleiades.uni-wuppertal.de
 **Only whep users can log into up, and down!**
 
 > **Note:**
-> Refer [SSH](./ssh) for advanced **SSH** logins.
+> Refer [SSH](../gettingstarted/ssh) for advanced **SSH** logins.
