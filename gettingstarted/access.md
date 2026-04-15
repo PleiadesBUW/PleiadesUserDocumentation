@@ -16,6 +16,23 @@ Accounts are valid for a given period (max. 3 years).
 At the end, you will receive automatic messages about your account life time and can either contact us about an extensions, if necessary.
 **The extension request should contain an exact extension date and involve your group supervisor**, such that we know that you are still part of your group.
 
+### Account details: You will get the access details by an email after granting access rights
+> Dear `<user>`,
+>
+> your PLEIADES account has been created:
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;username -> `<username>`  
+> &nbsp;&nbsp;&nbsp;&nbsp;password -> `<password>`
+>
+> Your home directory on the cluster is: `/beegfs/<username>`
+>
+> ...
+>
+> If you have questions, feel free to contact us at pleiades@uni-wuppertal.de (or reply to this mail).
+>
+> Kind Regards  
+> &nbsp;&nbsp;&nbsp;&nbsp;Your PLEIADES Team
+
 ### Questions/Support
 In case of questions and problems, please use the following email address:
 
@@ -28,7 +45,7 @@ Please change your initial password on any PLEIADES login machine by using this 
 
 ```bash
 $ passwd
-Changing password for user USERNAME.
+Changing password for user <username>.
 Current Password:
 [...]
 ```
@@ -45,7 +62,7 @@ We recommend to create a **password protected** [ssh-key](https://hpc-wiki.info/
 Additionally you can define in your local `~/.ssh/config`:
 ```
 Host fugg1
-    User <USERNAME>
+    User <username>
     Hostname fugg1.pleiades.uni-wuppertal.de
     IdentityFile ~/.ssh/<KEYNAME>
 ```
@@ -55,6 +72,8 @@ More info about ssh keys is available in the [corresponding github documentation
 
 > **Note:** This approach is also more secure, since mis-typing the URL for `uni-wuppertal.de` could expose your credentials to a malicious server that is not in our control.
 
+> **Note:**
+> Refer [SSH](../gettingstarted/ssh) for more **SSH** workflows.
 
 ### Login Nodes (all users except "whep" users)
 There are two login machine from which the cluster can be operated. They are:
@@ -78,9 +97,9 @@ A good practice for using ssh regularly is to setup ssh-keys on your local machi
 # and set a password!
 ssh-keygen -t ed25519
 # copy the ssh key to fugg1
-ssh-copy-id USERNAME@fugg1.pleiades.uni-wuppertal.de
+ssh-copy-id <username>@fugg1.pleiades.uni-wuppertal.de
 # Login will now use the ssh key
-ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
+ssh <username>@fugg1.pleiades.uni-wuppertal.de
 ```
 
 (from your local machine) to enable a key-based login on the frontend.
