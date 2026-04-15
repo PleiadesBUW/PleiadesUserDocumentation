@@ -21,10 +21,10 @@ At the end, you will receive automatic messages about your account life time and
 >
 > your PLEIADES account has been created:
 >
-> &nbsp;&nbsp;&nbsp;&nbsp;username -> `<user>`  
+> &nbsp;&nbsp;&nbsp;&nbsp;username -> `<username>`  
 > &nbsp;&nbsp;&nbsp;&nbsp;password -> `<password>`
 >
-> Your home directory on the cluster is: `/beegfs/<user>`
+> Your home directory on the cluster is: `/beegfs/<username>`
 >
 > ...
 >
@@ -45,7 +45,7 @@ Please change your initial password on any PLEIADES login machine by using this 
 
 ```bash
 $ passwd
-Changing password for user USERNAME.
+Changing password for user <username>.
 Current Password:
 [...]
 ```
@@ -128,7 +128,7 @@ Host fugg1 fugg2
     Hostname %h.pleiades.uni-wuppertal.de
 
 Match Host fugg1.pleiades.uni-wuppertal.de,fugg2.pleiades.uni-wuppertal.de
-    User user
+    User username
     IdentityFile ~/.ssh/pleiades
     ControlMaster no
     ControlPath ~/.ssh/control-%h-%p-%r
@@ -172,7 +172,7 @@ Host fugg1 fugg2
     Hostname %h.pleiades.uni-wuppertal.de
 
 Match Host fugg1.pleiades.uni-wuppertal.de,fugg2.pleiades.uni-wuppertal.de
-    User user
+    User username
     IdentityFile ~/.ssh/pleiades
     ControlMaster no
     ControlPath ~/.ssh/control-%h-%p-%r
@@ -182,7 +182,7 @@ Host wn21*
     Hostname %h.pleiades.uni-wuppertal.de
 
 Match Host wn21*.pleiades.uni-wuppertal.de
-    User user
+    User username
     IdentityFile ~/.ssh/pleiades
     ProxyJump fugg1
     StrictHostKeyChecking accept-new
