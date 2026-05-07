@@ -36,12 +36,29 @@ At the end, you will receive automatic messages about your account life time and
 ### Questions/Support
 In case of questions and problems, please use the following email address:
 
-**pleiades{at}uni-wuppertal.de**
+**pleiades@uni-wuppertal.de**
 
 
-### First Login and password change
-You will receive your initial password from the administrators after your group leader has countersigned the user application.
-Please change your initial password on any PLEIADES login machine by using this command:
+### Verification of host keys:
+- While connected to the University VPN, open a terminal and run one of the following commands:
+    - `ssh-keyscan -t ed25519 fugg1.pleiades.uni-wuppertal.de | ssh-keygen -lf -`
+    - `ssh-keyscan -t ed25519 fugg2.pleiades.uni-wuppertal.de | ssh-keygen -lf -`
+- This command retrieves the server's public SSH host key and displays its fingerprint. The fingerprint should match one of the following values:
+    - `256 SHA256:6YXp3CN+2XLlUw3nlnWSNTJ24sTYYcalLup6VMLd1HM fugg1.pleiades.uni-wuppertal.de (ED25519)`
+    - `256 SHA256:6YXp3CN+2XLlUw3nlnWSNTJ24sTYYcalLup6VMLd1HM fugg2.pleiades.uni-wuppertal.de (ED25519)`
+- Please verify that the displayed fingerprint matches exactly. These fingerprints were obtained directly from the cluster and are considered trusted.
+- If the fingerprint does not match, do not proceed and contact us at pleiades@uni-wuppertal.de.
+
+
+### First login and password change
+You will receive your initial password from the administrators after your group leader has countersigned the user application as described above.
+
+#### Steps for the initial setup:
+- Connect to the cluster using one of the following commands (make sure to replace `username` with your assigned username):
+    - `ssh username@fugg1.pleiades.uni-wuppertal.de`
+    - `ssh username@fugg2.pleiades.uni-wuppertal.de`
+- On the first connection, SSH will display the same fingerprint and ask whether to trust the host. If the fingerprint matches the values shown above, type `yes` to continue.
+- After logging in with the initial password, please change your initial password on any PLEIADES login nodes by using this command:
 
 ```bash
 $ passwd
@@ -74,6 +91,7 @@ More info about ssh keys is available in the [corresponding github documentation
 
 > **Note:**
 > Refer [SSH](../gettingstarted/ssh) for more **SSH** workflows.
+
 
 ### Login Nodes (all users except "whep" users)
 There are two login machine from which the cluster can be operated. They are:
