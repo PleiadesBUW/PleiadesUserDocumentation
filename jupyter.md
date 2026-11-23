@@ -5,6 +5,10 @@ nav_order: 6
 has_children: true
 ---
 
+## Jupyter @ University of Wuppertal
+If you are just looking for a general JupyterHub service, you can use your [ZIM account to get access to JupyterHub.nrw](https://zim.uni-wuppertal.de/de/unsere-dienste/portale/jupyterhubnrw/).
+This is the best choice for most JupyterHub workload that are not required to work in combination with our HPC system PLEIADES.
+
 ## Jupyter on PLEIADES
 Jupyter is a powerful tool for data science and interactive computing.
 Whether analyzing data, running simulations, or building models, Jupyters interactive environment and powerful tools make it easy to get work done.
