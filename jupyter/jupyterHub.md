@@ -5,6 +5,10 @@ parent: Jupyter
 nav_order: 1
 ---
 
+> **Note**
+> You can get access to generic JupyterHub services via [JupyterHub.nrw](https://zim.uni-wuppertal.de/de/unsere-dienste/portale/jupyterhubnrw/).
+> The following description of JupyterHub on PLEIADES are meant for cases where a combination of Jupyter and HPC ressources is required.
+
 ## Jupyter: JupyterHub on PLEIADES
 PLEIADES provides users with easy access to a JupyterLab session from within the universitys network.
 Depending on the users location, a VPN may be necessary to access it.
